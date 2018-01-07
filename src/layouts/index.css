@@ -32,6 +32,16 @@ body {
   background: #fff;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: Raleway, Open Sans, Arial, sans-serif;
+}
+
 h1 {
   font-size: 4.46666666667em;
   text-transform: uppercase;
@@ -62,7 +72,6 @@ p {
   text-align: left;
   font-size: 14px;
   line-height: 21px;
-  font-family: Raleway, Open Sans, Arial, sans-serif;
 }
 
 ::selection {
