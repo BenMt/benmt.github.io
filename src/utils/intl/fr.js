@@ -1,5 +1,13 @@
 const fr = {
   locale: 'fr',
+  Helmet: {
+    title: 'Benoit Maigret - Développeur web'
+  },
+  Navigation: {
+    about: 'Qui suis-je',
+    work: 'Portfolio',
+    contact: 'Contact'
+  },
   Welcome: {
     name: 'Benoit Maigret',
     mail: 'contact@benoitmaigret.com',
@@ -14,13 +22,9 @@ const fr = {
     sideproject:
       "Avec trois autres, je travaille sur un projet, service web et mobile. Je suis en charge du développement de l'application web, développé avec React. Pour le reste, il faudra patienter... "
   },
-  Helmet: {
-    title: 'Benoit Maigret - Développeur web'
-  },
-  Navigation: {
-    about: 'Qui suis-je',
-    work: 'Portfolio',
-    contact: 'Contact'
+  Work: {},
+  Contact: {
+    title: 'Contactez-moi'
   }
 }
 

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const SeparatorStyled = styled.div`
-  width: 200px;
+  width: ${props => props.width || 'auto'};
   height: 2px;
   background: #fff;
   position: relative;
@@ -18,8 +18,8 @@ const SeparatorInside = styled.div`
   background: ${props => props.theme.color.main};
 `
 
-const Separator = () => (
-  <SeparatorStyled>
+const Separator = ({ ...props }) => (
+  <SeparatorStyled {...props}>
     <SeparatorInside />
   </SeparatorStyled>
 )

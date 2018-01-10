@@ -39,11 +39,11 @@ const Subtitle = styled.h2`
 `
 
 const Welcome = ({ t }) => (
-  <SectionStyled background={bakgroundImage}>
+  <SectionStyled background={bakgroundImage} fullHeight>
     <Wrapper>
       <Content>
         <Title>{t('job')}</Title>
-        <Separator />
+        <Separator width="200px" />
         <Subtitle>{t('name')}</Subtitle>
       </Content>
     </Wrapper>

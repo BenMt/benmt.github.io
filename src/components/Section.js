@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
 const SectionStyled = styled.section`
-  height: 100%;
+  position: relative;
+  height: ${props => props.fullHeight && '100%'};
   padding: 2em 5em;
   box-sizing: border-box;
   ${props =>

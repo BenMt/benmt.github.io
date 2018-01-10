@@ -6,9 +6,10 @@ import Navigation from '../components/Navigation'
 import Welcome from '../components/Part/Welcome'
 import About from '../components/Part/About'
 import Work from '../components/Part/Work'
+import Contact from '../components/Part/Contact'
 
 const theme = {
-  color: { main: '#f56d45' }
+  color: { main: '#f56d45', mainHover: '#fd8866' }
 }
 
 const IndexPage = () => (
@@ -19,6 +20,7 @@ const IndexPage = () => (
         <Welcome />
         <About />
         <Work />
+        <Contact />
       </Absolute>
     </div>
   </ThemeProvider>
