@@ -3,8 +3,9 @@ import { ThemeProvider } from 'styled-components'
 
 import Absolute from '../components/Absolute'
 import Navigation from '../components/Navigation'
-import Intro from '../components/Part/Intro'
-import Status from '../components/Part/Status'
+import Welcome from '../components/Part/Welcome'
+import About from '../components/Part/About'
+import Work from '../components/Part/Work'
 
 const theme = {
   color: { main: '#f56d45' }
@@ -15,8 +16,9 @@ const IndexPage = () => (
     <div>
       <Navigation />
       <Absolute>
-        <Intro />
-        <Status />
+        <Welcome />
+        <About />
+        <Work />
       </Absolute>
     </div>
   </ThemeProvider>
