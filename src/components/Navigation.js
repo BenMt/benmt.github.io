@@ -44,7 +44,7 @@ const Icon = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
-  font-size: 2em;
+  font-size: 1.5em;
 `
 
 const Text = styled.span`
@@ -87,25 +87,25 @@ const Text = styled.span`
 const Navigation = ({ t }) => (
   <NavigationStyled>
     <Container>
-      <Link to="welcome" smooth duration={500}>
+      <Link to="welcome" smooth="easeInOutQuad" duration={1000}>
         <Icon>
           <WelcomeIcon />
         </Icon>
         <Text>{t('welcome')}</Text>
       </Link>
-      <Link to="about" smooth duration={500}>
+      <Link to="about" smooth="easeInOutQuad" duration={1000}>
         <Icon>
           <AboutIcon />
         </Icon>
         <Text>{t('about')}</Text>
       </Link>
-      <Link to="work" smooth duration={500}>
+      <Link to="work" smooth="easeInOutQuad" duration={1000}>
         <Icon>
           <WorkIcon />
         </Icon>
         <Text>{t('work')}</Text>
       </Link>
-      <Link to="contact" smooth duration={500}>
+      <Link to="contact" smooth="easeInOutQuad" duration={1000}>
         <Icon>
           <ContactIcon />
         </Icon>
