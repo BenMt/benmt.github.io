@@ -4,6 +4,7 @@ const fr = {
     title: 'Benoit Maigret - Développeur web'
   },
   Navigation: {
+    welcome: 'Accueil',
     about: 'Qui suis-je',
     work: 'Portfolio',
     contact: 'Contact'

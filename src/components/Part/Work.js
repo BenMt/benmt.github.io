@@ -6,8 +6,8 @@ import styled from 'styled-components'
 import Section from '../Section'
 import Wrapper from '../Wrapper'
 
-const Work = ({ t }) => (
-  <Section>
+const Work = ({ t, ...props }) => (
+  <Section {...props}>
     <Wrapper>
       <h1>WORK</h1>
     </Wrapper>

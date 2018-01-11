@@ -4,6 +4,7 @@ const en = {
     title: 'Benoit Maigret - web developer'
   },
   Navigation: {
+    welcome: 'Home',
     about: 'Who am I',
     work: 'Work',
     contact: 'Contact'

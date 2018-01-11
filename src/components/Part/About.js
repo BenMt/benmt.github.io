@@ -48,8 +48,8 @@ const SeparatorVertical = styled.div`
   margin: 0 2em;
 `
 
-const About = ({ t }) => (
-  <SectionStyled>
+const About = ({ t, ...props }) => (
+  <SectionStyled {...props}>
     <Wrapper>
       <Content>
         <Title>{t('title')}</Title>

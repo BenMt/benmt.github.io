@@ -88,8 +88,8 @@ const Text = styled.span`
 
 const IconContainer = styled.div``
 
-const Contact = ({ t, theme }) => (
-  <SectionStyled background={bakgroundImage}>
+const Contact = ({ t, theme, ...props }) => (
+  <SectionStyled background={bakgroundImage} {...props}>
     <Content>
       <StyledTitle color="#FFF">{t('title')}</StyledTitle>
       <Separator />

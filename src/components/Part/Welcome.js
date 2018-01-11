@@ -38,8 +38,8 @@ const Subtitle = styled.h2`
   font-size: 2em;
 `
 
-const Welcome = ({ t }) => (
-  <SectionStyled background={bakgroundImage} fullHeight>
+const Welcome = ({ t, ...props }) => (
+  <SectionStyled background={bakgroundImage} fullHeight {...props}>
     <Wrapper>
       <Content>
         <Title>{t('job')}</Title>

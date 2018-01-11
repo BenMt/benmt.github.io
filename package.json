@@ -9,6 +9,7 @@
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-styled-components": "^2.0.4",
     "react-icons": "^2.2.7",
+    "react-scroll": "^1.7.5",
     "react-translate": "^6.0.0",
     "styled-components": "^2.4.0"
   },

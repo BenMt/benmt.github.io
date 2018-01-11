@@ -17,10 +17,10 @@ const IndexPage = () => (
     <div>
       <Navigation />
       <Absolute>
-        <Welcome />
-        <About />
-        <Work />
-        <Contact />
+        <Welcome id="welcome" />
+        <About id="about" />
+        <Work id="work" />
+        <Contact id="contact" />
       </Absolute>
     </div>
   </ThemeProvider>
