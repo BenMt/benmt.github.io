@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { withTheme } from 'styled-components'
 import { translate } from 'react-translate'
+
 import GithubIcon from 'react-icons/lib/fa/github'
 import TwitterIcon from 'react-icons/lib/fa/twitter'
 import LinkedinIcon from 'react-icons/lib/fa/linkedin'
