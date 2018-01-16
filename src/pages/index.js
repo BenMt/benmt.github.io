@@ -9,7 +9,11 @@ import Work from '../components/Part/Work'
 import Contact from '../components/Part/Contact'
 
 const theme = {
-  color: { main: '#f56d45', mainHover: '#fd8866' }
+  color: { main: '#f56d45', mainHover: '#fd8866' },
+  font: {
+    main: "'Montserrat', sans-serif",
+    secondary: ' Raleway, Open Sans, Arial, sans-serif'
+  }
 }
 
 const IndexPage = () => (

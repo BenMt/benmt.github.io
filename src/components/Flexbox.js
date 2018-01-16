@@ -8,6 +8,7 @@ const Box = styled.div`
   flex-direction: ${props => props.flexDirection};
   justify-content: ${props => props.justifyContent};
   align-items: ${props => props.alignItems};
+  flex-wrap: ${props => props.flexWrap};
 `
 
 const Flexbox = ({ children, ...otherProps }) => (

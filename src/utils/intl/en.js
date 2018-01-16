@@ -23,7 +23,9 @@ const en = {
     sideproject:
       "Avec trois autres, je travaille sur un projet, service web et mobile. Je suis en charge du développement de l'application web, développé avec React. Pour le reste, il faudra patienter... "
   },
-  Work: {},
+  Work: {
+    cec: 'European consumer centre'
+  },
   Contact: {
     title: 'Contact me'
   }
