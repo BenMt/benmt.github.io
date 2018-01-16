@@ -1,4 +1,5 @@
 import React from 'react'
+import Favicon from './assets/img/favicon.ico'
 
 let stylesStr
 if (process.env.NODE_ENV === `production`) {
@@ -40,6 +41,7 @@ module.exports = class HTML extends React.Component {
             rel="stylesheet"
             href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
           />
+          <link rel="shortcut icon" href={Favicon} />
         </head>
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
