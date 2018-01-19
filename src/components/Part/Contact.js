@@ -16,6 +16,14 @@ import Title from '../Title'
 
 const SectionStyled = styled(Section)`
   padding: 10em 2em;
+  @media (max-width: 50em) {
+    padding: 8em 2em;
+  }
+
+  @media (max-width: 30em) {
+    padding: 4em 2em;
+    margin-bottom: 60px;
+  }
 `
 
 const Mask = styled.div`
@@ -62,6 +70,13 @@ const Link = styled.a`
 
 const Icon = styled.div`
   font-size: 5em;
+  @media (max-width: 50em) {
+    font-size: 4em;
+  }
+
+  @media (max-width: 30em) {
+    font-size: 3em;
+  }
 `
 
 const StyledTitle = styled(Title)`

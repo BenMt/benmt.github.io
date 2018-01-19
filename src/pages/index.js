@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 
 import Absolute from '../components/Absolute'
 import Navigation from '../components/Navigation'
@@ -10,16 +10,22 @@ import Contact from '../components/Part/Contact'
 
 import theme from '../utils/style/theme'
 
+const StyledAbsolute = styled(Absolute)`
+  @media (max-width: 30em) {
+    margin-bottom: 60px;
+  }
+`
+
 const IndexPage = () => (
   <ThemeProvider theme={theme}>
     <div>
       <Navigation />
-      <Absolute>
+      <StyledAbsolute>
         <Welcome id="welcome" />
         <About id="about" />
         <Work id="work" />
         <Contact id="contact" />
-      </Absolute>
+      </StyledAbsolute>
     </div>
   </ThemeProvider>
 )

@@ -12,6 +12,9 @@ import bakgroundImage from '../../assets/img/mac-apple-desk.jpg'
 
 const SectionStyled = styled(Section)`
   padding: 8em;
+  @media (max-width: 30em) {
+    padding: 4em;
+  }
 `
 
 const Mask = styled.div`
@@ -34,12 +37,21 @@ const Title = styled.h1`
   text-align: left;
   font-size: 5em;
   color: #fff;
+  @media (max-width: 50em) {
+    font-size: 3.5em;
+  }
+  @media (max-width: 30em) {
+    font-size: 3em;
+  }
 `
 
 const Subtitle = styled.h2`
   text-align: left;
   color: #fff;
   font-size: 2em;
+  @media (max-width: 50em) {
+    font-size: 1.8em;
+  }
 `
 
 const ScrollBottom = styled(Link)`
@@ -58,6 +70,9 @@ const ScrollBottom = styled(Link)`
   }
   svg {
     height: 100%;
+  }
+  @media (max-width: 50em) {
+    display: none;
   }
 `
 

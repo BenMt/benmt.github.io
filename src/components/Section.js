@@ -14,6 +14,9 @@ const SectionStyled = styled.section`
       background-position: 50%;
       background-size: cover;
     `};
+  @media (max-width: 30em) {
+    padding: 2em;
+  }
 `
 
 const Section = ({ children, background, ...otherProps }) => (

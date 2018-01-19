@@ -24,11 +24,17 @@ const Content = styled.div`
 
 const StyledTitle = styled(Title)`
   margin-bottom: 0;
+  @media (max-width: 30em) {
+    font-size: 2.5em;
+  }
 `
 
 const Subtitle = styled.h2`
   font-size: 2em;
   margin-top: 0;
+  @media (max-width: 30em) {
+    font-size: 1.8em;
+  }
 `
 
 const SkillsTitle = styled.h2`
@@ -44,11 +50,28 @@ const Text = styled.p``
 const NowText = styled.p`
   font-weight: lighter;
 `
+
+const NowFlexbox = styled(Flexbox)`
+  flex-direction: row;
+  padding: 2em 6em;
+  background-color: #efefef;
+  @media (max-width: 50em) {
+    flex-direction: column;
+  }
+  @media (max-width: 30em) {
+    padding: 2em;
+  }
+`
+
 const Now = styled.p`
   text-align: center;
   font-size: 2em;
   margin: 0 1em;
   font-style: italic;
+  @media (max-width: 50em) {
+    width: 100%;
+    margin: 1em 0 2em;
+  }
 `
 
 const StyledSeparator = styled(Separator)`
@@ -61,6 +84,9 @@ const ImgContainer = styled.div`
   min-width: 80px;
   margin: 0 2em;
   box-sizing: border-box;
+  @media (max-width: 30em) {
+    margin-left: 0;
+  }
 `
 const Image = styled.img`
   margin: auto;
@@ -74,13 +100,10 @@ const About = ({ t, ...props }) => (
         <Subtitle>{t('location')}</Subtitle>
         <Spacer />
         <Text>{t('description')}</Text>
-        <Spacer />
+        <Spacer size="6em" />
       </Content>
     </Wrapper>
-    <Flexbox
-      flexDirection="row"
-      style={{ padding: '2em 6em', backgroundColor: '#efefef' }}
-    >
+    <NowFlexbox>
       <Flexbox flexDirection="row" alignItems="center">
         <Now>{t('now')}</Now>
       </Flexbox>
@@ -96,14 +119,19 @@ const About = ({ t, ...props }) => (
           <NowText>{t('sydney')}</NowText>
         </Flexbox>
         <StyledSeparator noInside />
-        <Flexbox flexDirection="row" flex="1" alignItems="center">
+        <Flexbox
+          flexDirection="row"
+          flex="1"
+          alignItems="center"
+          style={{ margin: '1.8em 0' }}
+        >
           <ImgContainer>
             <Image style={{ width: '4em' }} src={KProject} alt="K icon" />
           </ImgContainer>
           <NowText>{t('sideproject')}</NowText>
         </Flexbox>
       </Flexbox>
-    </Flexbox>
+    </NowFlexbox>
     <Spacer size="6em" />
     <Wrapper>
       <SkillsTitle>{t('skills')}</SkillsTitle>

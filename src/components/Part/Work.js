@@ -10,7 +10,6 @@ import Zbaren from '../../assets/img/zbaeren.jpg'
 
 import Title from '../Title'
 import Section from '../Section'
-import Wrapper from '../Wrapper'
 import Flexbox from '../Flexbox'
 import Spacer from '../Spacer'
 
@@ -80,75 +79,69 @@ const Item = styled.a`
 
 const StyledFlexbox = styled(Flexbox)`
   width: 100%;
-  max-width: 650px;
+  max-width: 800px;
   margin: auto;
   flex-flow: row wrap;
-  ${'' /* &:after {
-    content: '';
-    flex: auto;
-  } */};
 `
 
 const Work = ({ t, ...props }) => (
   <Section {...props}>
-    <Wrapper>
-      <Title>{t('title')}</Title>
-      <StyledFlexbox justifyContent="center">
-        <Item
-          href="https://hozana.org"
-          target="_blank"
-          style={{ backgroundImage: `url(${Hozana})` }}
-        >
-          <Info>
-            <Background />
-            <FlexboxText justifyContent="center" flexDirection="column">
-              <Text>Hozana</Text>
-              <Skills>React - Redux - Webpack</Skills>
-            </FlexboxText>
-          </Info>
-        </Item>
-        <Item
-          href="https://www.lilithparis.com"
-          target="_blank"
-          style={{ backgroundImage: `url(${Lilith})` }}
-        >
-          <Info>
-            <Background />
-            <FlexboxText justifyContent="center" flexDirection="column">
-              <Text>Lilith</Text>
-              <Skills>Shopify</Skills>
-            </FlexboxText>
-          </Info>
-        </Item>
-        <Item
-          href="https://cec-zev.eu"
-          target="_blank"
-          style={{ backgroundImage: `url(${Cec})` }}
-        >
-          <Info>
-            <Background />
-            <FlexboxText justifyContent="center" flexDirection="column">
-              <Text fontSize="2em">{t('cec')}</Text>
-              <Skills>Typo3 - Sass - Gulp</Skills>
-            </FlexboxText>
-          </Info>
-        </Item>
-        <Item
-          href="http://zbaeren.ch/"
-          target="_blank"
-          style={{ backgroundImage: `url(${Zbaren})` }}
-        >
-          <Info>
-            <Background />
-            <FlexboxText justifyContent="center" flexDirection="column">
-              <Text>Zbäeren</Text>
-              <Skills>Wordpress - Sass - JS</Skills>
-            </FlexboxText>
-          </Info>
-        </Item>
-      </StyledFlexbox>
-      <Spacer size="4em" />
-    </Wrapper>
+    <Title>{t('title')}</Title>
+    <StyledFlexbox justifyContent="center">
+      <Item
+        href="https://hozana.org"
+        target="_blank"
+        style={{ backgroundImage: `url(${Hozana})` }}
+      >
+        <Info>
+          <Background />
+          <FlexboxText justifyContent="center" flexDirection="column">
+            <Text>Hozana</Text>
+            <Skills>React - Redux - Webpack</Skills>
+          </FlexboxText>
+        </Info>
+      </Item>
+      <Item
+        href="https://www.lilithparis.com"
+        target="_blank"
+        style={{ backgroundImage: `url(${Lilith})` }}
+      >
+        <Info>
+          <Background />
+          <FlexboxText justifyContent="center" flexDirection="column">
+            <Text>Lilith</Text>
+            <Skills>Shopify</Skills>
+          </FlexboxText>
+        </Info>
+      </Item>
+      <Item
+        href="https://cec-zev.eu"
+        target="_blank"
+        style={{ backgroundImage: `url(${Cec})` }}
+      >
+        <Info>
+          <Background />
+          <FlexboxText justifyContent="center" flexDirection="column">
+            <Text fontSize="2em">{t('cec')}</Text>
+            <Skills>Typo3 - Sass - Gulp</Skills>
+          </FlexboxText>
+        </Info>
+      </Item>
+      <Item
+        href="http://zbaeren.ch/"
+        target="_blank"
+        style={{ backgroundImage: `url(${Zbaren})` }}
+      >
+        <Info>
+          <Background />
+          <FlexboxText justifyContent="center" flexDirection="column">
+            <Text>Zbäeren</Text>
+            <Skills>Wordpress - Sass - JS</Skills>
+          </FlexboxText>
+        </Info>
+      </Item>
+    </StyledFlexbox>
+    <Spacer size="4em" />
   </Section>
 )
 

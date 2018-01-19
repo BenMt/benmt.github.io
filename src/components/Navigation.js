@@ -15,6 +15,12 @@ const NavigationStyled = styled.div`
   height: 100vh;
   left: 0;
   z-index: 5;
+  @media (max-width: 30em) {
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    box-sizing: border-box;
+  }
 `
 
 const Container = styled.div`
@@ -22,7 +28,19 @@ const Container = styled.div`
   height: 100%;
   justify-content: center;
   flex-direction: column;
-  &
+  @media (max-width: 30em) {
+    flex-direction: row;
+    background: ${props => props.theme.color.main};
+  }
+`
+
+const Icon = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: ${props => props.theme.color.main};
+  font-size: 1.5em;
 `
 
 const Link = styled(ScrollLink)`
@@ -32,20 +50,20 @@ const Link = styled(ScrollLink)`
   color: #fff;
   margin-bottom: 1px;
   position: relative;
-  background: ${props => props.theme.color.main};
   margin-bottom: 4px;
   cursor: pointer;
-  &:hover {
+  ${Icon}:hover & {
     opacity: 0.8;
   }
-`
-
-const Icon = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  font-size: 1.5em;
+  @media (max-width: 30em) {
+    height: 60px;
+    width: 80px;
+    margin: 0;
+    border-right: 1px solid #ffa990;
+    &:last-child {
+      border: none;
+    }
+  }
 `
 
 const Text = styled.span`
@@ -82,6 +100,9 @@ const Text = styled.span`
     border-right-color: #000;
     border-width: 4px;
     margin-top: -4px;
+  }
+  @media (max-width: 50em) {
+    display: none;
   }
 `
 
