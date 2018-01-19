@@ -12,11 +12,17 @@ import fr from './src/utils/intl/fr'
 import en from './src/utils/intl/en'
 
 const translations = { fr, en }
+const language = Object.prototype.hasOwnProperty.call(
+  translations,
+  navigator.language
+)
+  ? navigator.language
+  : 'en'
 
 exports.wrapRootComponent = Root => {
   const RootComponent = Root.Root
   const Wrapper = () => (
-    <TranslatorProvider translations={translations.fr}>
+    <TranslatorProvider translations={translations[language]}>
       <RootComponent />
     </TranslatorProvider>
   )
