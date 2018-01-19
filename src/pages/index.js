@@ -14,7 +14,7 @@ const IndexPage = () => (
   <ThemeProvider theme={theme}>
     <div>
       <Navigation />
-      <Absolute style={{ overflow: 'hidden' }}>
+      <Absolute>
         <Welcome id="welcome" />
         <About id="about" />
         <Work id="work" />

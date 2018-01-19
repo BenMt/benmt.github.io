@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const SeparatorStyled = styled.div`
@@ -18,10 +19,18 @@ const SeparatorInside = styled.div`
   background: ${props => props.theme.color.main};
 `
 
-const Separator = ({ ...props }) => (
+const Separator = ({ noInside, ...props }) => (
   <SeparatorStyled {...props}>
-    <SeparatorInside />
+    {!noInside && <SeparatorInside />}
   </SeparatorStyled>
 )
+
+Separator.propTypes = {
+  noInside: PropTypes.bool
+}
+
+Separator.defaultProps = {
+  noInside: false
+}
 
 export default Separator

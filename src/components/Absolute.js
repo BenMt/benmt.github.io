@@ -10,7 +10,9 @@ const AbsoluteStyled = styled.div`
   bottom: 0;
 `
 
-const Absolute = ({ children }) => <AbsoluteStyled>{children}</AbsoluteStyled>
+const Absolute = ({ children, ...props }) => (
+  <AbsoluteStyled {...props}>{children}</AbsoluteStyled>
+)
 
 Absolute.propTypes = {
   children: PropTypes.node.isRequired
