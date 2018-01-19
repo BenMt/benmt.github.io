@@ -11,20 +11,23 @@ const fr = {
   },
   Welcome: {
     name: 'Benoit Maigret',
-    mail: 'contact@benoitmaigret.com',
-    job: 'Développeur web',
-    location: 'Sydney, Australie'
+    job: 'Développeur web'
   },
   About: {
     title: 'Développeur web front-end',
-    location: 'Sydney, Australia',
+    location: 'Sydney, Australie',
     description:
-      "Je suis développeur web freelance depuis début 2014. Auparavant, j'ai passé 3 années à travailler dans plusieurs agences de communication, exerçant dans le développement front-end et back-end ainsi que dans la gestion de projet.\nJe vous accompagne de la conception à la réalisation pour tout type de projet web, du site vitrine à l'application web en passant par l'e-commerce.",
+      "Je suis développeur web spécialisé front-end. Passionné par le milieu web, j'aime mon métier et la possibilité de pouvoir collaborer dans des projets ambitieux et humains. Après quelques années en agence, je me suis lancé en tant que freelance en 2014. Basé à Mulhouse, en France, je découvre actuellement une nouvelle culture à l'autre bout du monde, au pays des kangourous.",
+    now: 'En ce moment',
     sydney: "À la recherche d'un poste sur Sydney",
     sideproject:
-      "Avec trois autres, je travaille sur un projet, service web et mobile. Je suis en charge du développement de l'application web, développé avec React. Pour le reste, il faudra patienter... "
+      "Nous sommes une petite équipe de 4 personnes à travailler sur un projet fantastique (bien sûr). Je suis en charge du développement de l'application web, développé avec React. Pour le reste, il faudra patienter... ",
+    skills: 'Compétences',
+    other: 'Autres',
+    junior: 'Niveau débutant'
   },
   Work: {
+    title: 'Portfolio',
     cec: 'Centre européen de la consommation'
   },
   Contact: {

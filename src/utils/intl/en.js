@@ -5,25 +5,29 @@ const en = {
   },
   Navigation: {
     welcome: 'Home',
-    about: 'Who am I',
+    about: 'Who I am',
     work: 'Work',
     contact: 'Contact'
   },
   Welcome: {
     name: 'Benoit Maigret',
-    mail: 'contact@benoitmaigret.com',
-    job: 'Web developer',
-    location: 'Sydney, Australia'
+    job: 'Web developer'
   },
   About: {
     title: 'Front-end web developer',
+    location: 'Sydney, Australia',
     description:
-      "Je suis développeur web freelance depuis début 2014. Auparavant, j'ai passé 3 années à travailler dans plusieurs agences de communication, exerçant dans le développement front-end et back-end ainsi que dans la gestion de projet.\nJe vous accompagne de la conception à la réalisation pour tout type de projet web, du site vitrine à l'application web en passant par l'e-commerce.",
-    sydney: "À la recherche d'un poste sur Sydney",
+      'I am a front-end web developer. Passionate by the web, I like my job and the possibility to collaborate in ambitious and human projects. After few years in agency, I launched my own business as freelance in 2014. Located in Mulhouse, in France, I am currently discovering a new culture in the other side of the world, in Australia.',
+    now: 'At the moment',
+    sydney: 'Looking for a job in Sydney',
     sideproject:
-      "Avec trois autres, je travaille sur un projet, service web et mobile. Je suis en charge du développement de l'application web, développé avec React. Pour le reste, il faudra patienter... "
+      'We are a little team of 4 people working on an awesome project (of course). I am responsible for the web application development, with React. For the rest, be patient...',
+    skills: 'Skills',
+    other: 'Others',
+    junior: 'In progress'
   },
   Work: {
+    title: 'Work',
     cec: 'European consumer centre'
   },
   Contact: {
