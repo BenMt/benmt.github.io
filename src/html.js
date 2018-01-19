@@ -33,7 +33,7 @@ module.exports = class HTML extends React.Component {
           {this.props.headComponents}
           {css}
           <link
-            href="http://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:100,300,600,800"
+            href="http://fonts.googleapis.com/css?family=Open+Sans:300,400|Raleway:200,300,600"
             rel="stylesheet"
             type="text/css"
           />
