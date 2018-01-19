@@ -8,19 +8,13 @@ import About from '../components/Part/About'
 import Work from '../components/Part/Work'
 import Contact from '../components/Part/Contact'
 
-const theme = {
-  color: { main: '#f56d45', mainHover: '#fd8866' },
-  font: {
-    main: "'Montserrat', sans-serif",
-    secondary: ' Raleway, Open Sans, Arial, sans-serif'
-  }
-}
+import theme from '../utils/style/theme'
 
 const IndexPage = () => (
   <ThemeProvider theme={theme}>
     <div>
       <Navigation />
-      <Absolute>
+      <Absolute style={{ overflow: 'hidden' }}>
         <Welcome id="welcome" />
         <About id="about" />
         <Work id="work" />
