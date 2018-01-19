@@ -68,7 +68,7 @@ const Welcome = ({ t, ...props }) => (
       <Separator width="200px" />
       <Subtitle>{t('name')}</Subtitle>
       <ScrollBottom to="about" smooth="easeInOutQuad" duration={1000}>
-        <ArrowDownIcon />
+        <ArrowDownIcon style={{ verticalAlign: 'top' }} />
       </ScrollBottom>
     </Content>
     <Mask />
