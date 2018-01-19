@@ -8,9 +8,11 @@ import Lilith from '../../assets/img/logo_lilith.jpg'
 import Cec from '../../assets/img/logo_CEC.jpg'
 import Zbaren from '../../assets/img/zbaeren.jpg'
 
+import Title from '../Title'
 import Section from '../Section'
 import Wrapper from '../Wrapper'
 import Flexbox from '../Flexbox'
+import Spacer from '../Spacer'
 
 const Info = styled.div`
   height: 100%;
@@ -39,7 +41,7 @@ const Background = styled.div`
   background-color: ${props => props.theme.color.main};
   opacity: 0;
 `
-const Title = styled.h3`
+const Text = styled.h3`
   font-weight: normal;
   font-size: ${props => (props.fontSize ? props.fontSize : '3em')};
   text-decoration: none;
@@ -47,9 +49,7 @@ const Title = styled.h3`
 `
 
 const Skills = styled.span`
-  font-family: ${props => props.theme.font.secondary};
   font-weight: 200;
-  font-style: italic;
 `
 
 const Item = styled.a`
@@ -92,7 +92,7 @@ const StyledFlexbox = styled(Flexbox)`
 const Work = ({ t, ...props }) => (
   <Section {...props}>
     <Wrapper>
-      <h1>WORK</h1>
+      <Title>{t('title')}</Title>
       <StyledFlexbox justifyContent="center">
         <Item
           href="https://hozana.org"
@@ -102,7 +102,7 @@ const Work = ({ t, ...props }) => (
           <Info>
             <Background />
             <FlexboxText justifyContent="center" flexDirection="column">
-              <Title>Hozana</Title>
+              <Text>Hozana</Text>
               <Skills>React - Redux - Webpack</Skills>
             </FlexboxText>
           </Info>
@@ -115,7 +115,7 @@ const Work = ({ t, ...props }) => (
           <Info>
             <Background />
             <FlexboxText justifyContent="center" flexDirection="column">
-              <Title>Lilith</Title>
+              <Text>Lilith</Text>
               <Skills>Shopify</Skills>
             </FlexboxText>
           </Info>
@@ -128,7 +128,7 @@ const Work = ({ t, ...props }) => (
           <Info>
             <Background />
             <FlexboxText justifyContent="center" flexDirection="column">
-              <Title fontSize="2em">Conseil Européen de la consommation</Title>
+              <Text fontSize="2em">{t('cec')}</Text>
               <Skills>Typo3 - Sass - Gulp</Skills>
             </FlexboxText>
           </Info>
@@ -141,12 +141,13 @@ const Work = ({ t, ...props }) => (
           <Info>
             <Background />
             <FlexboxText justifyContent="center" flexDirection="column">
-              <Title>Zbäeren</Title>
+              <Text>Zbäeren</Text>
               <Skills>Wordpress - Sass - JS</Skills>
             </FlexboxText>
           </Info>
         </Item>
       </StyledFlexbox>
+      <Spacer size="4em" />
     </Wrapper>
   </Section>
 )

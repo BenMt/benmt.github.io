@@ -21,7 +21,7 @@ const Mask = styled.div`
   width: 100%;
   height: 100%;
   background: #292929;
-  opacity: 0.8;
+  opacity: 0.85;
 `
 
 const Content = styled.div`
@@ -55,6 +55,9 @@ const ScrollBottom = styled(Link)`
   transition: all 0.2s;
   &:hover {
     opacity: 0.8;
+  }
+  svg {
+    height: 100%;
   }
 `
 

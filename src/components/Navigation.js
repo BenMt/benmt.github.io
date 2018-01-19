@@ -12,7 +12,7 @@ import ContactIcon from 'react-icons/lib/fa/comments'
 const NavigationStyled = styled.div`
   position: fixed;
   width: 40px;
-  height: 100%;
+  height: 100vh;
   left: 0;
   z-index: 5;
 `
@@ -22,6 +22,7 @@ const Container = styled.div`
   height: 100%;
   justify-content: center;
   flex-direction: column;
+  &
 `
 
 const Link = styled(ScrollLink)`
