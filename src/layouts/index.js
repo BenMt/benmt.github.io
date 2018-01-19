@@ -9,10 +9,7 @@ const TemplateWrapper = ({ children, t }) => (
   <div>
     <Helmet
       title={t('title')}
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' }
-      ]}
+      meta={[{ name: 'description', content: t('description') }]}
     />
     {children()}
   </div>

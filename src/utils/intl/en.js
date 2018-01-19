@@ -1,7 +1,8 @@
 const en = {
   locale: 'en',
   Helmet: {
-    title: 'Benoit Maigret - web developer'
+    title: 'Benoit Maigret - web developer',
+    description: 'I am a front-end web developer'
   },
   Navigation: {
     welcome: 'Home',
