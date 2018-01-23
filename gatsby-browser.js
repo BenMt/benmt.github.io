@@ -4,7 +4,6 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
 import React from 'react'
 import { TranslatorProvider } from 'react-translate'
 
@@ -20,10 +19,9 @@ const language = Object.prototype.hasOwnProperty.call(
   : 'en'
 
 exports.wrapRootComponent = Root => {
-  const RootComponent = Root.Root
   const Wrapper = () => (
     <TranslatorProvider translations={translations[language]}>
-      <RootComponent />
+      <Root.Root />
     </TranslatorProvider>
   )
   return Wrapper
