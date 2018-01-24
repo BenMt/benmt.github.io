@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "title": "Benoit Maigret - Développeur web",
+    "description": "Développeur web front-end"
+  },
+  "navigation": {
+    "welcome": "Accueil",
+    "about": "Qui suis-je",
+    "work": "Portfolio",
+    "contact": "Contact"
+  },
+  "welcome": {
+    "job": "Développeur web"
+  },
+  "about": {
+    "title": "Développeur web front-end"
+  },
+  "work": {
+    "title": "Portfolio"
+  },
+  "contact": {
+    "title": "Contactez-moi"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "title": "Benoit Maigret - web developer",
+    "description": "Front-end web developer"
+  },
+  "navigation": {
+    "welcome": "Home",
+    "about": "Who I am",
+    "work": "Work",
+    "contact": "Contact"
+  },
+  "welcome": {
+    "job": "Web developer"
+  },
+  "about": {
+    "title": "Front-end web developer"
+  },
+  "work": {
+    "title": "Work"
+  },
+  "contact": {
+    "title": "Contact me"
+  }
+}

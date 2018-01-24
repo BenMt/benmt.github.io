@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled, { ThemeProvider } from 'styled-components'
 
 import Absolute from '../components/Absolute'
@@ -16,12 +17,12 @@ const StyledAbsolute = styled(Absolute)`
   }
 `
 
-const IndexPage = () => (
+const IndexPage = ({ lang = 'en' }) => (
   <ThemeProvider theme={theme}>
     <div>
       <Navigation />
       <StyledAbsolute>
-        <Welcome id="welcome" />
+        <Welcome id="welcome" lang={lang} />
         <About id="about" />
         <Work id="work" />
         <Contact id="contact" />
@@ -29,5 +30,9 @@ const IndexPage = () => (
     </div>
   </ThemeProvider>
 )
+
+IndexPage.propTypes = {
+  lang: PropTypes.string.isRequired
+}
 
 export default IndexPage
