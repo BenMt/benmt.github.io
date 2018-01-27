@@ -18,13 +18,15 @@ const StyledAbsolute = styled(Absolute)`
   }
 `
 
-const IndexPage = ({ author, contact, work, translations }) => (
+const IndexPage = ({ author, contact, work, translations, lang }) => (
   <ThemeProvider theme={theme}>
     <div>
       <Helmet
         title={`${author.name} | ${translations.job.long}`}
         meta={[{ name: 'description', content: translations.job.long }]}
-      />
+      >
+        <html lang={`${lang}`} />
+      </Helmet>
       <Navigation data={translations.navigation} />
       <StyledAbsolute>
         <Welcome id="welcome" author={author} translations={translations} />
@@ -53,7 +55,8 @@ IndexPage.propTypes = {
       skills: PropTypes.string.isRequired
     })
   ).isRequired,
-  translations: PropTypes.shape({}).isRequired
+  translations: PropTypes.shape({}).isRequired,
+  lang: PropTypes.string.isRequired
 }
 
 export default IndexPage

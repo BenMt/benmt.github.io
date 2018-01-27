@@ -9,6 +9,7 @@ const IndexEnPage = ({ data }) => (
     work={data.site.siteMetadata.work}
     contact={data.site.siteMetadata.contact}
     translations={data.site.siteMetadata.en}
+    lang="en"
   />
 )
 
