@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { translate } from 'react-translate'
 import styled from 'styled-components'
 import { Link } from 'react-scroll'
 
 import ArrowDownIcon from 'react-icons/lib/ti/arrow-down'
 
 import Section from '../Section'
+import Mask from '../Mask'
 import Separator from '../Separator'
 import bakgroundImage from '../../assets/img/mac-apple-desk.jpg'
 
@@ -15,16 +15,6 @@ const SectionStyled = styled(Section)`
   @media (max-width: 30em) {
     padding: 4em;
   }
-`
-
-const Mask = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #292929;
-  opacity: 0.85;
 `
 
 const Content = styled.div`
@@ -76,22 +66,23 @@ const ScrollBottom = styled(Link)`
   }
 `
 
-const Welcome = ({ t, ...props }) => (
+const Welcome = ({ author, translations, ...props }) => (
   <SectionStyled background={bakgroundImage} fullHeight {...props}>
     <Content>
-      <Title>{t('job')}</Title>
+      <Title>{translations.job.short}</Title>
       <Separator width="200px" />
-      <Subtitle>{t('name')}</Subtitle>
+      <Subtitle>{author.name}</Subtitle>
       <ScrollBottom to="about" smooth="easeInOutQuad" duration={1000}>
         <ArrowDownIcon style={{ verticalAlign: 'top' }} />
       </ScrollBottom>
     </Content>
-    <Mask />
+    <Mask opacity="0.85" />
   </SectionStyled>
 )
 
 Welcome.propTypes = {
-  t: PropTypes.func.isRequired
+  author: PropTypes.shape({}).isRequired,
+  translations: PropTypes.shape({}).isRequired
 }
 
-export default translate('Welcome')(Welcome)
+export default Welcome

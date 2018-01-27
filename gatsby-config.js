@@ -1,28 +1,15 @@
+const siteMetadata = require('./src/data/siteMetadata')
+
 module.exports = {
+  siteMetadata,
   plugins: [
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-styled-components`,
-    `gatsby-transformer-json`,
-    `gatsby-transformer-yaml`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-plugin-i18n',
       options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages/`
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `data`,
-        path: `${__dirname}/src/data/`
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `components`,
-        path: `${__dirname}/src/components/`
+        langKeyDefault: 'en',
+        useLangKeyLayout: false
       }
     },
     {

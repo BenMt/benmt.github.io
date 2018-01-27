@@ -1,22 +1,30 @@
-const fr = {
-  locale: 'fr',
-  Helmet: {
-    title: 'Benoit Maigret - Développeur web',
-    description: 'Je suis développeur web spécialisé front-end'
+module.exports = {
+  navigation: [
+    {
+      title: 'Accueil',
+      href: 'welcome'
+    },
+    {
+      title: 'Qui suis-je',
+      href: 'about'
+    },
+    {
+      title: 'Portfolio',
+      href: 'work'
+    },
+    {
+      title: 'Contact',
+      href: 'contact'
+    }
+  ],
+  job: {
+    short: 'Développeur web',
+    long: 'Développeur web front-end'
   },
-  Navigation: {
-    welcome: 'Accueil',
-    about: 'Qui suis-je',
-    work: 'Portfolio',
-    contact: 'Contact'
-  },
-  Welcome: {
-    name: 'Benoit Maigret',
-    job: 'Développeur web'
-  },
-  About: {
-    title: 'Développeur web front-end',
-    location: 'Sydney, Australie',
+  location: 'Sydney, Australie',
+  work: 'Portfolio',
+  contact: 'Contactez-moi',
+  about: {
     description:
       "Je suis développeur web spécialisé front-end. Passionné par le milieu web, j'aime mon métier et la possibilité de pouvoir collaborer dans des projets ambitieux et humains. Après quelques années en agence, je me suis lancé en tant que freelance en 2014. Basé à Mulhouse, en France, je découvre actuellement une nouvelle culture à l'autre bout du monde, au pays des kangourous.",
     now: 'En ce moment',
@@ -27,13 +35,5 @@ const fr = {
     other: 'Autres',
     junior: 'Niveau débutant'
   },
-  Work: {
-    title: 'Portfolio',
-    cec: 'Centre européen de la consommation'
-  },
-  Contact: {
-    title: 'Contactez-moi'
-  }
+  cec: 'Centre européen de la consommation'
 }
-
-export default fr

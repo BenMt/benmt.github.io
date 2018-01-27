@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { withTheme } from 'styled-components'
-import { translate } from 'react-translate'
 
 import GithubIcon from 'react-icons/lib/fa/github'
 import TwitterIcon from 'react-icons/lib/fa/twitter'
 import LinkedinIcon from 'react-icons/lib/fa/linkedin'
-import MailIcon from 'react-icons/lib/fa/envelope'
+import EmailIcon from 'react-icons/lib/fa/envelope'
 
 import bakgroundImage from '../../assets/img/contact.jpg'
 
 import Section from '../Section'
+import Mask from '../Mask'
 import Separator from '../Separator'
 import Title from '../Title'
 
@@ -24,16 +24,6 @@ const SectionStyled = styled(Section)`
     padding: 4em 2em;
     margin-bottom: 60px;
   }
-`
-
-const Mask = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #292929;
-  opacity: 0.7;
 `
 
 const Content = styled.div`
@@ -104,44 +94,23 @@ const Text = styled.span`
 
 const IconContainer = styled.div``
 
-const Contact = ({ t, theme, ...props }) => (
+const Contact = ({ contact, translations, theme, ...props }) => (
   <SectionStyled background={bakgroundImage} {...props}>
     <Content>
-      <StyledTitle color="#FFF">{t('title')}</StyledTitle>
+      <StyledTitle color="#FFF">{translations.contact}</StyledTitle>
       <Separator />
       <IconContainer>
-        <Link
-          href="https://twitter.com/benoitmaigret"
-          target="_blank"
-          theme={theme}
-        >
-          <Icon>
-            <TwitterIcon />
-          </Icon>
-          <Text>Twitter</Text>
-        </Link>
-        <Link href="https://github.com/BenMt" target="_blank" theme={theme}>
-          <Icon>
-            <GithubIcon />
-          </Icon>
-          <Text>Github</Text>
-        </Link>
-        <Link
-          href="https://www.linkedin.com/in/benoitmaigret/"
-          target="_blank"
-          theme={theme}
-        >
-          <Icon>
-            <LinkedinIcon />
-          </Icon>
-          <Text>Linkedin</Text>
-        </Link>
-        <Link href="mailto:contact+fwebsite@benoitmaigret.com" theme={theme}>
-          <Icon>
-            <MailIcon />
-          </Icon>
-          <Text>Email</Text>
-        </Link>
+        {contact.map(item => (
+          <Link key={item.type} href={item.link} target="_blank" theme={theme}>
+            <Icon>
+              {item.type === 'email' && <EmailIcon />}
+              {item.type === 'github' && <GithubIcon />}
+              {item.type === 'twitter' && <TwitterIcon />}
+              {item.type === 'linkedin' && <LinkedinIcon />}
+            </Icon>
+            <Text>{item.value}</Text>
+          </Link>
+        ))}
       </IconContainer>
     </Content>
     <Mask />
@@ -149,8 +118,15 @@ const Contact = ({ t, theme, ...props }) => (
 )
 
 Contact.propTypes = {
-  t: PropTypes.func.isRequired,
+  contact: PropTypes.arrayOf(
+    PropTypes.shape({
+      type: PropTypes.string,
+      value: PropTypes.string,
+      link: PropTypes.string
+    })
+  ).isRequired,
+  translations: PropTypes.shape({}).isRequired,
   theme: PropTypes.shape({ color: PropTypes.object }).isRequired
 }
 
-export default translate('Contact')(withTheme(Contact))
+export default withTheme(Contact)

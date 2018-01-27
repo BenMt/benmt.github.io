@@ -1,12 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { translate } from 'react-translate'
 import styled from 'styled-components'
-
-import Hozana from '../../assets/img/hozana.jpg'
-import Lilith from '../../assets/img/logo_lilith.jpg'
-import Cec from '../../assets/img/logo_CEC.jpg'
-import Zbaren from '../../assets/img/zbaeren.jpg'
 
 import Title from '../Title'
 import Section from '../Section'
@@ -84,69 +78,45 @@ const StyledFlexbox = styled(Flexbox)`
   flex-flow: row wrap;
 `
 
-const Work = ({ t, ...props }) => (
+const Work = ({ work, translations, ...props }) => (
   <Section {...props}>
-    <Title>{t('title')}</Title>
+    <Title>{translations.work}</Title>
     <StyledFlexbox justifyContent="center">
-      <Item
-        href="https://hozana.org"
-        target="_blank"
-        style={{ backgroundImage: `url(${Hozana})` }}
-      >
-        <Info>
-          <Background />
-          <FlexboxText justifyContent="center" flexDirection="column">
-            <Text>Hozana</Text>
-            <Skills>React - Redux - Webpack</Skills>
-          </FlexboxText>
-        </Info>
-      </Item>
-      <Item
-        href="https://www.lilithparis.com"
-        target="_blank"
-        style={{ backgroundImage: `url(${Lilith})` }}
-      >
-        <Info>
-          <Background />
-          <FlexboxText justifyContent="center" flexDirection="column">
-            <Text>Lilith</Text>
-            <Skills>Shopify</Skills>
-          </FlexboxText>
-        </Info>
-      </Item>
-      <Item
-        href="https://cec-zev.eu"
-        target="_blank"
-        style={{ backgroundImage: `url(${Cec})` }}
-      >
-        <Info>
-          <Background />
-          <FlexboxText justifyContent="center" flexDirection="column">
-            <Text fontSize="2em">{t('cec')}</Text>
-            <Skills>Typo3 - Sass - Gulp</Skills>
-          </FlexboxText>
-        </Info>
-      </Item>
-      <Item
-        href="http://zbaeren.ch/"
-        target="_blank"
-        style={{ backgroundImage: `url(${Zbaren})` }}
-      >
-        <Info>
-          <Background />
-          <FlexboxText justifyContent="center" flexDirection="column">
-            <Text>Zbäeren</Text>
-            <Skills>Wordpress - Sass - JS</Skills>
-          </FlexboxText>
-        </Info>
-      </Item>
+      {work.map(item => (
+        <Item
+          key={item.link}
+          href={item.link}
+          target="_blank"
+          style={{
+            backgroundImage: `url(${require(`../../assets/img/${item.image}`)})`
+          }}
+        >
+          <Info>
+            <Background />
+            <FlexboxText justifyContent="center" flexDirection="column">
+              <Text fontSize={!item.title && '2em'}>
+                {item.title || translations.cec}
+              </Text>
+              <Skills>{item.skills}</Skills>
+            </FlexboxText>
+          </Info>
+        </Item>
+      ))}
     </StyledFlexbox>
     <Spacer size="4em" />
   </Section>
 )
 
 Work.propTypes = {
-  t: PropTypes.func.isRequired
+  work: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      link: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      skills: PropTypes.string.isRequired
+    })
+  ).isRequired,
+  translations: PropTypes.shape({}).isRequired
 }
 
-export default translate('Work')(Work)
+export default Work

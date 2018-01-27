@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { translate } from 'react-translate'
 import styled from 'styled-components'
 
 import Section from '../Section'
@@ -92,20 +91,20 @@ const Image = styled.img`
   margin: auto;
 `
 
-const About = ({ t, ...props }) => (
+const About = ({ translations, ...props }) => (
   <SectionStyled {...props}>
     <Wrapper>
       <Content>
-        <StyledTitle>{t('title')}</StyledTitle>
-        <Subtitle>{t('location')}</Subtitle>
+        <StyledTitle>{translations.job.long}</StyledTitle>
+        <Subtitle>{translations.location}</Subtitle>
         <Spacer />
-        <Text>{t('description')}</Text>
+        <Text>{translations.about.description}</Text>
         <Spacer size="6em" />
       </Content>
     </Wrapper>
     <NowFlexbox>
       <Flexbox flexDirection="row" alignItems="center">
-        <Now>{t('now')}</Now>
+        <Now>{translations.about.now}</Now>
       </Flexbox>
       <Flexbox flexDirection="column">
         <Flexbox flexDirection="row" flex="1" alignItems="center">
@@ -116,7 +115,7 @@ const About = ({ t, ...props }) => (
               alt="Sydney Opera House icon"
             />
           </ImgContainer>
-          <NowText>{t('sydney')}</NowText>
+          <NowText>{translations.about.sydney}</NowText>
         </Flexbox>
         <StyledSeparator noInside />
         <Flexbox
@@ -128,13 +127,13 @@ const About = ({ t, ...props }) => (
           <ImgContainer>
             <Image style={{ width: '4em' }} src={KProject} alt="K icon" />
           </ImgContainer>
-          <NowText>{t('sideproject')}</NowText>
+          <NowText>{translations.about.sideproject}</NowText>
         </Flexbox>
       </Flexbox>
     </NowFlexbox>
     <Spacer size="6em" />
     <Wrapper>
-      <SkillsTitle>{t('skills')}</SkillsTitle>
+      <SkillsTitle>{translations.about.skills}</SkillsTitle>
       <Separator dark width="200px" />
       <Spacer />
       <SkillsSubTitle>Front-end</SkillsSubTitle>
@@ -144,7 +143,7 @@ const About = ({ t, ...props }) => (
         <strong>React</strong>, <strong>Redux</strong>, <strong>Webpack</strong>
       </p>
       <Spacer />
-      <SkillsSubTitle>{t('other')}</SkillsSubTitle>
+      <SkillsSubTitle>{translations.about.other}</SkillsSubTitle>
       <p>
         <strong>Wordpress</strong>, <strong>Shopify</strong>,{' '}
         <strong>NodeJS</strong>, <strong>PHP</strong> (CodeIgniter),{' '}
@@ -153,16 +152,17 @@ const About = ({ t, ...props }) => (
         <strong>Agile Scrum</strong>
       </p>
       <Spacer />
-      <SkillsSubTitle>{t('junior')}</SkillsSubTitle>
+      <SkillsSubTitle>{translations.about.junior}</SkillsSubTitle>
       <p>
-        <strong>Reason Ml</strong>, <strong>Vue.js</strong>
+        <strong>Reason Ml</strong>, <strong>Vue.js</strong>,{' '}
+        <strong>GraphQL</strong>
       </p>
     </Wrapper>
   </SectionStyled>
 )
 
 About.propTypes = {
-  t: PropTypes.func.isRequired
+  translations: PropTypes.shape({}).isRequired
 }
 
-export default translate('About')(About)
+export default About

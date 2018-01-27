@@ -1,38 +1,28 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import styled, { ThemeProvider } from 'styled-components'
+import { withPrefix } from 'gatsby-link'
 
-import Absolute from '../components/Absolute'
-import Navigation from '../components/Navigation'
-import Welcome from '../components/Part/Welcome'
-import About from '../components/Part/About'
-import Work from '../components/Part/Work'
-import Contact from '../components/Part/Contact'
+class RedirectIndex extends React.PureComponent {
+  constructor(args) {
+    super(args)
 
-import theme from '../utils/style/theme'
+    // Skip build, Browsers only
+    if (typeof window !== 'undefined') {
+      const langKey = 'en'
+      const homeUrl = withPrefix(`/${langKey}/`)
 
-const StyledAbsolute = styled(Absolute)`
-  @media (max-width: 30em) {
-    margin-bottom: 60px;
+      // I don`t think this is the best solution
+      // I would like to use Gatsby Redirects like:
+      // https://github.com/gatsbyjs/gatsby/tree/master/examples/using-redirects
+      // But Gatsby Redirects are static, they need to be specified at build time,
+      // This redirect is dynamic, It needs to know the user browser language.
+      // Any ideias? Join the issue: https://github.com/angeloocana/gatsby-starter-default-i18n/issues/4
+      window.___history.replace(homeUrl)
+    }
   }
-`
 
-const IndexPage = ({ lang = 'en' }) => (
-  <ThemeProvider theme={theme}>
-    <div>
-      <Navigation />
-      <StyledAbsolute>
-        <Welcome id="welcome" lang={lang} />
-        <About id="about" />
-        <Work id="work" />
-        <Contact id="contact" />
-      </StyledAbsolute>
-    </div>
-  </ThemeProvider>
-)
-
-IndexPage.propTypes = {
-  lang: PropTypes.string.isRequired
+  render() {
+    return <div />
+  }
 }
 
-export default IndexPage
+export default RedirectIndex

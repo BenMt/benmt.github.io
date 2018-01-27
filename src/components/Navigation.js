@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { translate } from 'react-translate'
 import { Link as ScrollLink } from 'react-scroll'
 
 import WelcomeIcon from 'react-icons/lib/fa/home'
@@ -106,39 +105,36 @@ const Text = styled.span`
   }
 `
 
-const Navigation = ({ t }) => (
+const Navigation = ({ data }) => (
   <NavigationStyled>
     <Container>
-      <Link to="welcome" smooth="easeInOutQuad" duration={1000}>
-        <Icon>
-          <WelcomeIcon />
-        </Icon>
-        <Text>{t('welcome')}</Text>
-      </Link>
-      <Link to="about" smooth="easeInOutQuad" duration={1000}>
-        <Icon>
-          <AboutIcon />
-        </Icon>
-        <Text>{t('about')}</Text>
-      </Link>
-      <Link to="work" smooth="easeInOutQuad" duration={1000}>
-        <Icon>
-          <WorkIcon />
-        </Icon>
-        <Text>{t('work')}</Text>
-      </Link>
-      <Link to="contact" smooth="easeInOutQuad" duration={1000}>
-        <Icon>
-          <ContactIcon />
-        </Icon>
-        <Text>{t('contact')}</Text>
-      </Link>
+      {data.map(item => (
+        <Link
+          key={item.href}
+          to={item.href}
+          smooth="easeInOutQuad"
+          duration={1000}
+        >
+          <Icon>
+            {item.href === 'welcome' && <WelcomeIcon />}
+            {item.href === 'about' && <AboutIcon />}
+            {item.href === 'work' && <WorkIcon />}
+            {item.href === 'contact' && <ContactIcon />}
+          </Icon>
+          <Text>{item.title}</Text>
+        </Link>
+      ))}
     </Container>
   </NavigationStyled>
 )
 
 Navigation.propTypes = {
-  t: PropTypes.func.isRequired
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      href: PropTypes.string
+    })
+  ).isRequired
 }
 
-export default translate('Navigation')(Navigation)
+export default Navigation
