@@ -30,7 +30,7 @@ module.exports = {
     now: 'At the moment',
     sydney: 'Looking for a job in Sydney',
     sideproject:
-      'We are a little team of 4 people working on an awesome project (of course). I am responsible for the web application development, with React. For the rest, be patient...',
+      'We are a little team of 4 people working on an awesome project (of course). I am in charge of the web application development, with React. For the rest, be patient...',
     skills: 'Skills',
     other: 'Others',
     junior: 'In progress'
