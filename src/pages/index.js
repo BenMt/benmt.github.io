@@ -10,7 +10,7 @@ class IndexFrPage extends React.Component {
 
     // Skip build, Browsers only
     if (typeof window !== 'undefined') {
-      if (navigator.language !== 'fr') {
+      if (!navigator.language.includes('fr')) {
         const homeUrl = withPrefix(`/en/`)
         window.___history.replace(homeUrl)
       }
