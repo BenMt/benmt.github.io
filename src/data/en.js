@@ -26,7 +26,7 @@ module.exports = {
   contact: 'Contact me',
   about: {
     description:
-      'I am a front-end web developer. Passionate by the web, I like my job and the possibility to collaborate in ambitious and human projects. After few years in agency, I launched my own business as freelance in 2014. Located in Mulhouse, in France, I am currently discovering a new culture in the other side of the world, in Australia.',
+      'I am a front-end web developer. Passionate about the web, I like the opportunity to work on human and ambitious projects. After few years in agency, I launched my own business as freelance in 2014. Located in Mulhouse, in France, I am currently discovering a new culture in the other side of the world, in Australia.',
     now: 'At the moment',
     sydney: 'Looking for a job in Sydney',
     sideproject:
