@@ -106,29 +106,29 @@ const About = ({ translations, ...props }) => (
       <Wrapper>
         <Flexbox flexDirection="row" alignItems="center">
           <Now>{translations.about.now}</Now>
-        </Flexbox>
-        <Flexbox flexDirection="column">
-          <Flexbox flexDirection="row" flex="1" alignItems="center">
-            <ImgContainer>
-              <Image
-                style={{ width: '5em' }}
-                src={SydneyOpearHouse}
-                alt="Sydney Opera House icon"
-              />
-            </ImgContainer>
-            <NowText>{translations.about.sydney}</NowText>
-          </Flexbox>
-          <StyledSeparator noInside />
-          <Flexbox
-            flexDirection="row"
-            flex="1"
-            alignItems="center"
-            style={{ margin: '1.8em 0' }}
-          >
-            <ImgContainer>
-              <Image style={{ width: '4em' }} src={KProject} alt="K icon" />
-            </ImgContainer>
-            <NowText>{translations.about.sideproject}</NowText>
+          <Flexbox flexDirection="column">
+            <Flexbox flexDirection="row" flex="1" alignItems="center">
+              <ImgContainer>
+                <Image
+                  style={{ width: '5em' }}
+                  src={SydneyOpearHouse}
+                  alt="Sydney Opera House icon"
+                />
+              </ImgContainer>
+              <NowText>{translations.about.sydney}</NowText>
+            </Flexbox>
+            <StyledSeparator noInside />
+            <Flexbox
+              flexDirection="row"
+              flex="1"
+              alignItems="center"
+              style={{ margin: '1.8em 0' }}
+            >
+              <ImgContainer>
+                <Image style={{ width: '4em' }} src={KProject} alt="K icon" />
+              </ImgContainer>
+              <NowText>{translations.about.sideproject}</NowText>
+            </Flexbox>
           </Flexbox>
         </Flexbox>
       </Wrapper>
@@ -140,9 +140,9 @@ const About = ({ translations, ...props }) => (
       <Spacer />
       <SkillsSubTitle>Front-end</SkillsSubTitle>
       <p>
-        <strong>HTML</strong>, <strong>CSS</strong> (BEM methodology, CSS
-        Modules, inline styles, SASS), <strong>JavaScript</strong> (ES6),{' '}
-        <strong>React</strong>, <strong>Redux</strong>, <strong>Webpack</strong>
+        <strong>JavaScript</strong> (ES6), <strong>React</strong>,{' '}
+        <strong>Redux</strong>, <strong>Webpack</strong>, <strong>HTML</strong>,{' '}
+        <strong>CSS</strong> (BEM methodology, CSS Modules, inline styles, SASS)
       </p>
       <Spacer />
       <SkillsSubTitle>{translations.about.other}</SkillsSubTitle>

@@ -25,7 +25,7 @@ const IndexPage = ({ author, contact, work, translations, lang }) => (
         title={`${author.name} | ${translations.job.long}`}
         meta={[{ name: 'description', content: translations.job.long }]}
       >
-        <html lang={`${lang}`} />
+        <html lang={lang} />
       </Helmet>
       <Navigation data={translations.navigation} />
       <StyledAbsolute>
