@@ -75,7 +75,6 @@ const Now = styled.p`
 
 const StyledSeparator = styled(Separator)`
   margin: 0.5em 2em;
-  margin-bottom: 1.8em;
   height: 1px;
   background-color: #ccc;
 `
@@ -115,15 +114,10 @@ const About = ({ translations, ...props }) => (
                   alt="Sydney Opera House icon"
                 />
               </ImgContainer>
-              <NowText>{translations.about.sydney}</NowText>
+              <NowText>{translations.about.free}</NowText>
             </Flexbox>
             <StyledSeparator noInside />
-            <Flexbox
-              flexDirection="row"
-              flex="1"
-              alignItems="center"
-              style={{ margin: '1.8em 0' }}
-            >
+            <Flexbox flexDirection="row" flex="1" alignItems="center">
               <ImgContainer>
                 <Image style={{ width: '4em' }} src={KProject} alt="K icon" />
               </ImgContainer>
