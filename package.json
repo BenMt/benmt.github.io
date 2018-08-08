@@ -1,37 +1,32 @@
 {
-  "name": "benoitmaigret-gatsby",
+  "name": "benoitmaigret-phenomic",
   "description": "Personal website",
   "version": "1.0.0",
   "author": "Benoit Maigret <contact@benoitmaigret.com>",
-  "dependencies": {
-    "gatsby": "^1.9.277",
-    "gatsby-plugin-google-analytics": "^1.0.15",
-    "gatsby-plugin-i18n": "^0.4.1",
-    "gatsby-plugin-react-helmet": "^2.0.3",
-    "gatsby-plugin-styled-components": "^2.0.4",
-    "react-helmet": "^5.2.0",
-    "react-icons": "^2.2.7",
-    "react-scroll": "^1.7.6",
-    "styled-components": "^2.4.0"
-  },
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "deploy": "gatsby build && cp ./CNAME ./README.md ./.gitignore public/ && gh-pages -b master -d public",
-    "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "private": true,
   "devDependencies": {
-    "eslint": "^4.14.0",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-config-prettier": "^2.6.0",
-    "eslint-loader": "^1.9.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-prettier": "^2.3.1",
-    "eslint-plugin-react": "^7.4.0",
-    "gh-pages": "^1.2.0",
-    "prettier": "^1.10.2"
+    "@phenomic/cli": "^1.0.0-beta.3",
+    "@phenomic/core": "^1.0.0-beta.3",
+    "@phenomic/preset-react-app": "^1.0.0-beta.3",
+    "bs-platform": "^3.1.0",
+    "bs-react-helmet": "^0.2.1",
+    "npm-run-all": "^4.0.2",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "react-helmet": "^5.2.0",
+    "react-router": "^3.2.0",
+    "reason-react": "^0.4.1"
+  },
+  "scripts": {
+    "reason:cleanup": "bsb -clean-world",
+    "reason:compile": "bsb -make-world",
+    "prepare": "yarn reason:cleanup && yarn reason:compile",
+    "start": "yarn reason:cleanup && npm-run-all --parallel start:*",
+    "start:js": "phenomic start",
+    "start:reason": "yarn reason:compile -- -w",
+    "build": "yarn reason:compile && phenomic build"
+  },
+  "phenomic": {
+    "presets": ["@phenomic/preset-react-app"]
   }
 }

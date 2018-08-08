@@ -1,8 +1,18 @@
-# Project dependencies
-# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+*.log
 node_modules
-.cache/
-# Build directory
-public/
+
+# macOS
 .DS_Store
-yarn-error.log
+
+# rely on yarn.lock
+package-lock.json
+
+# build
+lib/**/*.js
+lib/bs/**/*
+lib/ocaml/**/*
+dist
+
+# reason stuff
+.merlin
+.bsb.lock
