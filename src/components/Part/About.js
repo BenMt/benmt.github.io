@@ -9,9 +9,6 @@ import Flexbox from '../Flexbox'
 import Spacer from '../Spacer'
 import Separator from '../Separator'
 
-import SydneyOpearHouse from '../../assets/img/sydney-opera-house.svg'
-import KProject from '../../assets/img/k.svg'
-
 const SectionStyled = styled(Section)`
   padding: 4em 0;
 `
@@ -47,6 +44,7 @@ const SkillsSubTitle = styled.h3`
 
 const Text = styled.p``
 const NowText = styled.p`
+  padding: 0 3em;
   font-weight: lighter;
 `
 
@@ -78,17 +76,6 @@ const StyledSeparator = styled(Separator)`
   height: 1px;
   background-color: #ccc;
 `
-const ImgContainer = styled.div`
-  min-width: 80px;
-  margin: 0 2em;
-  box-sizing: border-box;
-  @media (max-width: 30em) {
-    margin-left: 0;
-  }
-`
-const Image = styled.img`
-  margin: auto;
-`
 
 const About = ({ translations, ...props }) => (
   <SectionStyled {...props}>
@@ -107,20 +94,10 @@ const About = ({ translations, ...props }) => (
           <Now>{translations.about.now}</Now>
           <Flexbox flexDirection="column">
             <Flexbox flexDirection="row" flex="1" alignItems="center">
-              <ImgContainer>
-                <Image
-                  style={{ width: '5em' }}
-                  src={SydneyOpearHouse}
-                  alt="Sydney Opera House icon"
-                />
-              </ImgContainer>
               <NowText>{translations.about.free}</NowText>
             </Flexbox>
             <StyledSeparator noInside />
             <Flexbox flexDirection="row" flex="1" alignItems="center">
-              <ImgContainer>
-                <Image style={{ width: '4em' }} src={KProject} alt="K icon" />
-              </ImgContainer>
               <NowText>{translations.about.sideproject}</NowText>
             </Flexbox>
           </Flexbox>
@@ -133,25 +110,15 @@ const About = ({ translations, ...props }) => (
       <Separator dark width="200px" />
       <Spacer />
       <SkillsSubTitle>Front-end</SkillsSubTitle>
-      <p>
-        <strong>JavaScript</strong> (ES6), <strong>React</strong>,{' '}
-        <strong>Redux</strong>, <strong>Webpack</strong>, <strong>HTML</strong>,{' '}
-        <strong>CSS</strong> (BEM methodology, CSS Modules, inline styles, SASS)
-      </p>
+      <p>JavaScript (ES6), React, Redux, Webpack, Flow, TypeScript</p>
+      <Spacer />
+      <SkillsSubTitle>{translations.about.junior}</SkillsSubTitle>
+      <p>React Native, Reason Ml, Vue.js, GraphQL</p>
       <Spacer />
       <SkillsSubTitle>{translations.about.other}</SkillsSubTitle>
       <p>
-        <strong>Wordpress</strong>, <strong>Shopify</strong>,{' '}
-        <strong>NodeJS</strong>, <strong>PHP</strong> (CodeIgniter),{' '}
-        <strong>Git</strong> (Github), <strong>Heroku</strong>,{' '}
-        <strong>Unix</strong>, <strong>Atom</strong>,{' '}
-        <strong>Agile Scrum</strong>
-      </p>
-      <Spacer />
-      <SkillsSubTitle>{translations.about.junior}</SkillsSubTitle>
-      <p>
-        <strong>Reason Ml</strong>, <strong>Vue.js</strong>,{' '}
-        <strong>GraphQL</strong>
+        Git (Github), Heroku, Unix, Atom, Agile Scrum<br />
+        Wordpress, Shopify, NodeJS, PHP (CodeIgniter)
       </p>
     </Wrapper>
   </SectionStyled>

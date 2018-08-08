@@ -69,7 +69,7 @@ export const query = graphql`
           about {
             description
             now
-            sydney
+            free
             sideproject
             skills
             other

@@ -28,7 +28,8 @@ module.exports = {
     description:
       "Je suis développeur web spécialisé front-end. Passionné par le milieu web, j'aime mon métier et la possibilité de pouvoir collaborer dans des projets ambitieux et humains. Après quelques années en agence, je me suis lancé en tant que freelance en 2014.",
     now: 'En ce moment',
-    free: "Disponible pour des projets",
+    free:
+      'Je suis disponible pour vous accompagner dans votre projet de site/application web.',
     sideproject:
       "Nous sommes une petite équipe de 4 personnes à travailler sur un projet fantastique (bien sûr). Je suis en charge du développement de l'application web, développé avec React. Pour le reste, il faudra patienter... ",
     skills: 'Compétences techniques',
