@@ -5,8 +5,11 @@ import styled, { css } from 'styled-components'
 const SectionStyled = styled.section`
   position: relative;
   height: ${props => props.fullHeight && '100%'};
-  padding: 2em 5em;
+  padding: 4em 5em;
   box-sizing: border-box;
+  &:nth-child(odd) {
+    background: ${props => !props.background && '#f1f1f1'};
+  }
   ${props =>
     props.background &&
     css`

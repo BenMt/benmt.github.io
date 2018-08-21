@@ -7,6 +7,7 @@ import Absolute from '../components/Absolute'
 import Navigation from '../components/Navigation'
 import Welcome from '../components/Part/Welcome'
 import About from '../components/Part/About'
+import Skills from '../components/Part/Skills'
 import Work from '../components/Part/Work'
 import Contact from '../components/Part/Contact'
 
@@ -30,7 +31,8 @@ const IndexPage = ({ author, contact, work, translations, lang }) => (
       <Navigation data={translations.navigation} />
       <StyledAbsolute>
         <Welcome id="welcome" author={author} translations={translations} />
-        <About id="about" translations={translations} />
+        <About id="about" contact={contact} translations={translations} />
+        <Skills id="skills" translations={translations} />
         <Work id="work" work={work} translations={translations} />
         <Contact id="contact" contact={contact} translations={translations} />
       </StyledAbsolute>

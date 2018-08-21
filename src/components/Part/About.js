@@ -1,17 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import Link from 'gatsby-link'
+
+import GithubIcon from 'react-icons/lib/fa/github'
+import FileIcon from 'react-icons/lib/go/file-text'
 
 import Section from '../Section'
 import Title from '../Title'
 import Wrapper from '../Wrapper'
 import Flexbox from '../Flexbox'
 import Spacer from '../Spacer'
-import Separator from '../Separator'
-
-const SectionStyled = styled(Section)`
-  padding: 4em 0;
-`
 
 const Content = styled.div`
   position: relative;
@@ -19,7 +18,7 @@ const Content = styled.div`
 `
 
 const StyledTitle = styled(Title)`
-  margin-bottom: 0;
+  margin: 0;
   @media (max-width: 30em) {
     font-size: 2.5em;
   }
@@ -33,99 +32,63 @@ const Subtitle = styled.h2`
   }
 `
 
-const SkillsTitle = styled.h2`
-  text-align: left;
-  margin-bottom: 0;
-`
-
-const SkillsSubTitle = styled.h3`
-  text-align: left;
-`
-
-const Text = styled.p``
-const NowText = styled.p`
-  padding: 0 3em;
-  font-weight: lighter;
-`
-
-const NowFlexbox = styled(Flexbox)`
-  flex-direction: row;
-  padding: 2em 6em;
-  background-color: #efefef;
-  @media (max-width: 50em) {
-    flex-direction: column;
+const StyledLink = styled.a`
+  color: #000;
+  text-decoration: none;
+  margin: 0 4em;
+  & > svg {
+    font-size: 5em;
   }
-  @media (max-width: 30em) {
-    padding: 2em;
+  &:active {
+    color: ${props => props.theme.color.mainHover};
+    outline-width: 0;
+  }
+  &:hover {
+    outline-width: 0;
+    color: ${props => props.theme.color.main};
+  }
+  &:focus {
+    outline-style: dotted;
+    outline-color: ${props => props.theme.color.main};
+    outline-width: thin;
   }
 `
+const StyledGatsbyLinK = StyledLink.withComponent(Link)
 
-const Now = styled.p`
-  text-align: center;
-  font-size: 2em;
-  margin: 0 1em;
-  font-style: italic;
-  @media (max-width: 50em) {
-    width: 100%;
-    margin: 1em 0 2em;
-  }
-`
-
-const StyledSeparator = styled(Separator)`
-  margin: 0.5em 2em;
-  height: 1px;
-  background-color: #ccc;
-`
-
-const About = ({ translations, ...props }) => (
-  <SectionStyled {...props}>
+const About = ({ translations, contact, ...props }) => (
+  <Section {...props}>
     <Wrapper>
       <Content>
         <StyledTitle>{translations.job.long}</StyledTitle>
         <Subtitle>{translations.location}</Subtitle>
         <Spacer />
-        <Text>{translations.about.description}</Text>
-        <Spacer size="6em" />
+        <p>{translations.about.description}</p>
+        <Spacer size="4em" />
+        <Flexbox
+          flexDirection="row"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <StyledGatsbyLinK to="/cv">
+            <FileIcon />
+            <h3>CV</h3>
+          </StyledGatsbyLinK>
+          <StyledLink
+            target="_blank"
+            href={contact.find(item => item.type === 'github').link}
+          >
+            <GithubIcon />
+            <h3>Github</h3>
+          </StyledLink>
+        </Flexbox>
       </Content>
     </Wrapper>
-    <NowFlexbox>
-      <Wrapper>
-        <Flexbox flexDirection="row" alignItems="center">
-          <Now>{translations.about.now}</Now>
-          <Flexbox flexDirection="column">
-            <Flexbox flexDirection="row" flex="1" alignItems="center">
-              <NowText>{translations.about.free}</NowText>
-            </Flexbox>
-            <StyledSeparator noInside />
-            <Flexbox flexDirection="row" flex="1" alignItems="center">
-              <NowText>{translations.about.sideproject}</NowText>
-            </Flexbox>
-          </Flexbox>
-        </Flexbox>
-      </Wrapper>
-    </NowFlexbox>
-    <Spacer size="6em" />
-    <Wrapper>
-      <SkillsTitle>{translations.about.skills}</SkillsTitle>
-      <Separator dark width="200px" />
-      <Spacer />
-      <SkillsSubTitle>Front-end</SkillsSubTitle>
-      <p>JavaScript (ES6), React, Redux, Webpack, Flow, TypeScript</p>
-      <Spacer />
-      <SkillsSubTitle>{translations.about.junior}</SkillsSubTitle>
-      <p>React Native, Reason Ml, Vue.js, GraphQL</p>
-      <Spacer />
-      <SkillsSubTitle>{translations.about.other}</SkillsSubTitle>
-      <p>
-        Git (Github), Heroku, Unix, Atom, Agile Scrum<br />
-        Wordpress, Shopify, NodeJS, PHP (CodeIgniter)
-      </p>
-    </Wrapper>
-  </SectionStyled>
+  </Section>
 )
 
 About.propTypes = {
-  translations: PropTypes.shape({}).isRequired
+  translations: PropTypes.shape({}).isRequired,
+  contact: PropTypes.shape({}).isRequired
 }
 
 export default About

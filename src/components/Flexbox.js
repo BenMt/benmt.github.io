@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 const Box = styled.div`
   display: flex;
+  position: relative;
   height: ${props => props.height};
   flex-direction: ${props => props.flexDirection};
   justify-content: ${props => props.justifyContent};

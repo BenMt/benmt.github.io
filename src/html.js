@@ -32,15 +32,6 @@ module.exports = class HTML extends React.Component {
           />
           {this.props.headComponents}
           {css}
-          <link
-            href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Raleway:200,300,600"
-            rel="stylesheet"
-            type="text/css"
-          />
-          <link
-            rel="stylesheet"
-            href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
-          />
           <link rel="shortcut icon" href={Favicon} />
         </head>
         <body {...this.props.bodyAttributes}>
@@ -51,6 +42,15 @@ module.exports = class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
+          <link
+            href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Raleway:200,300,600"
+            rel="stylesheet"
+            type="text/css"
+          />
+          <link
+            rel="stylesheet"
+            href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+          />
         </body>
       </html>
     )

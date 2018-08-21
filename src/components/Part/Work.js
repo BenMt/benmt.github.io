@@ -74,7 +74,7 @@ const Item = styled.a`
 const StyledFlexbox = styled(Flexbox)`
   width: 100%;
   max-width: 800px;
-  margin: auto;
+  margin: 2em auto;
   flex-flow: row wrap;
 `
 
@@ -103,7 +103,6 @@ const Work = ({ work, translations, ...props }) => (
         </Item>
       ))}
     </StyledFlexbox>
-    <Spacer size="4em" />
   </Section>
 )
 
