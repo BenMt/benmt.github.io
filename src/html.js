@@ -43,7 +43,7 @@ module.exports = class HTML extends React.Component {
           />
           {this.props.postBodyComponents}
           <link
-            href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Raleway:200,300,600"
+            href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Raleway:200,300,600"
             rel="stylesheet"
             type="text/css"
           />
