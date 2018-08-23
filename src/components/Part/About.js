@@ -63,7 +63,7 @@ const About = ({ translations, contact, ...props }) => (
         <Subtitle>{translations.location}</Subtitle>
         <Spacer />
         <p>{translations.about.description}</p>
-        <Spacer size="4em" />
+        {/* <Spacer size="4em" /> */}
         {/* <Flexbox
           flexDirection="row"
           alignItems="center"
@@ -95,7 +95,13 @@ const About = ({ translations, contact, ...props }) => (
 
 About.propTypes = {
   translations: PropTypes.shape({}).isRequired,
-  contact: PropTypes.shape({}).isRequired
+  contact: PropTypes.arrayOf(
+    PropTypes.shape({
+      type: PropTypes.string,
+      value: PropTypes.string,
+      link: PropTypes.string
+    })
+  ).isRequired
 }
 
 export default About
