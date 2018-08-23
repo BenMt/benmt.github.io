@@ -64,7 +64,7 @@ const About = ({ translations, contact, ...props }) => (
         <Spacer />
         <p>{translations.about.description}</p>
         <Spacer size="4em" />
-        <Flexbox
+        {/* <Flexbox
           flexDirection="row"
           alignItems="center"
           justifyContent="center"
@@ -75,12 +75,19 @@ const About = ({ translations, contact, ...props }) => (
           </StyledGatsbyLinK>
           <StyledLink
             target="_blank"
+            href={`../../assets/pdf/${translations.about.resume}`}
+          >
+            <FileIcon />
+            <h3>Github</h3>
+          </StyledLink>
+          <StyledLink
+            target="_blank"
             href={contact.find(item => item.type === 'github').link}
           >
             <GithubIcon />
             <h3>Github</h3>
           </StyledLink>
-        </Flexbox>
+        </Flexbox> */}
       </Content>
     </Wrapper>
   </Section>

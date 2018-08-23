@@ -12,6 +12,13 @@ module.exports = {
         useLangKeyLayout: false
       }
     },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     path: `${__dirname}/path/to/markdown/files`,
+    //     name: "markdown-pages",
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

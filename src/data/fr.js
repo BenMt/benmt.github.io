@@ -36,5 +36,14 @@ module.exports = {
     other: 'Autres',
     junior: 'Niveau débutant'
   },
-  cec: 'Centre européen de la consommation'
+  cec: 'Centre européen de la consommation',
+  resume: [
+    {
+      company: 'Indépendant',
+      job: 'Développeur front-end',
+      location: 'Mulhouse',
+      date: 'depuis 2014',
+      text: ''
+    }
+  ]
 }

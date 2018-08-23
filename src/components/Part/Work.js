@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import Title from '../Title'
 import Section from '../Section'
 import Flexbox from '../Flexbox'
-import Spacer from '../Spacer'
 
 const Info = styled.div`
   height: 100%;

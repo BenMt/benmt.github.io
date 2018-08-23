@@ -7,7 +7,7 @@ const Mask = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: #292929;
+  background: ${props => props.color || '#292929'};
   opacity: ${props => (props.opacity ? props.opacity : '0.7')};
 `
 

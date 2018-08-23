@@ -1,25 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import IndexPage from '../templates/IndexPage'
+import ResumePage from '../templates/ResumePage'
 
-const IndexEnPage = ({ data }) => (
-  <IndexPage
+const ResumeFrPage = ({ data }) => (
+  <ResumePage
     author={data.site.siteMetadata.author}
     work={data.site.siteMetadata.work}
     contact={data.site.siteMetadata.contact}
-    translations={data.site.siteMetadata.en}
-    lang="en"
+    translations={data.site.siteMetadata.fr}
+    lang="fr"
   />
 )
 
-IndexEnPage.propTypes = {
+ResumeFrPage.propTypes = {
   data: PropTypes.shape({}).isRequired
 }
 
-export default IndexEnPage
+export default ResumeFrPage
 export const query = graphql`
-  query IndexEnQuery {
+  query ResumeFrQuery {
     site {
       siteMetadata {
         author {
@@ -36,7 +36,7 @@ export const query = graphql`
           image
           skills
         }
-        en {
+        fr {
           navigation {
             title
             href
@@ -50,6 +50,9 @@ export const query = graphql`
           contact
           about {
             description
+            now
+            free
+            sideproject
             skills
             other
             junior
