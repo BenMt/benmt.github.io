@@ -1,38 +1,42 @@
 {
-  "name": "benoitmaigret-gatsby",
+  "name": "benoitmaigret",
+  "private": true,
   "description": "Personal website",
-  "version": "1.0.0",
+  "version": "4.0.0",
   "author": "Benoit Maigret <contact@benoitmaigret.com>",
   "dependencies": {
-    "gatsby": "^1.9.277",
-    "gatsby-plugin-google-analytics": "^1.0.15",
-    "gatsby-plugin-i18n": "^0.4.1",
-    "gatsby-plugin-react-helmet": "^2.0.3",
-    "gatsby-plugin-styled-components": "^2.0.4",
-    "gatsby-source-filesystem": "^1.5.39",
+    "gatsby": "^2.1.24",
+    "gatsby-image": "^2.0.31",
+    "gatsby-plugin-manifest": "^2.0.22",
+    "gatsby-plugin-offline": "^2.0.24",
+    "gatsby-plugin-react-helmet": "^3.0.8",
+    "gatsby-plugin-sharp": "^2.0.25",
+    "gatsby-plugin-styled-components": "^3.0.6",
+    "gatsby-source-contentful": "^2.0.35",
+    "gatsby-source-filesystem": "^2.0.23",
+    "gatsby-transformer-sharp": "^2.1.15",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
-    "react-icons": "^2.2.7",
-    "react-scroll": "^1.7.6",
-    "styled-components": "^2.4.0"
-  },
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "deploy": "gatsby build && cp ./CNAME ./README.md ./.gitignore public/ && gh-pages -b master -d public",
-    "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "react-icons": "^3.5.0",
+    "rebass": "^3.0.1",
+    "styled-components": "^4.1.3"
   },
   "devDependencies": {
-    "eslint": "^4.14.0",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-config-prettier": "^2.6.0",
-    "eslint-loader": "^1.9.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-prettier": "^2.3.1",
-    "eslint-plugin-react": "^7.4.0",
-    "gh-pages": "^1.2.0",
-    "prettier": "^1.10.2"
+    "eslint": "^5.15.1",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "prettier": "^1.16.4"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "dev": "gatsby develop",
+    "format": "prettier --write src/**/*.{js}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   }
 }

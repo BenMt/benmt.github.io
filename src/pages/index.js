@@ -1,83 +1,18 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { withPrefix } from 'gatsby-link'
+import styled from 'styled-components'
+import { Heading } from 'rebass'
 
-import IndexPage from '../templates/IndexPage'
+import Layout from '../components/Layout'
+import SEO from '../components/Seo'
+import Wrapper from '../components/Wrapper'
 
-class IndexFrPage extends React.Component {
-  constructor(args) {
-    super(args)
+const HomePage = () => (
+  <Layout>
+    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <Wrapper>
+      <Heading>Développeur web</Heading>
+    </Wrapper>
+  </Layout>
+)
 
-    // Skip build, Browsers only
-    if (typeof window !== 'undefined') {
-      if (!navigator.language.includes('fr')) {
-        const homeUrl = withPrefix(`/en/`)
-        window.___history.replace(homeUrl)
-      }
-    }
-  }
-
-  render() {
-    const { data } = this.props
-    return (
-      <IndexPage
-        author={data.site.siteMetadata.author}
-        work={data.site.siteMetadata.work}
-        contact={data.site.siteMetadata.contact}
-        translations={data.site.siteMetadata.fr}
-        lang="fr"
-      />
-    )
-  }
-}
-
-IndexFrPage.propTypes = {
-  data: PropTypes.shape({}).isRequired
-}
-
-export default IndexFrPage
-export const query = graphql`
-  query IndexFrQuery {
-    site {
-      siteMetadata {
-        author {
-          name
-        }
-        contact {
-          type
-          value
-          link
-        }
-        work {
-          title
-          link
-          image
-          skills
-        }
-        fr {
-          navigation {
-            title
-            href
-          }
-          job {
-            short
-            long
-          }
-          location
-          work
-          contact
-          about {
-            description
-            now
-            free
-            sideproject
-            skills
-            other
-            junior
-          }
-          cec
-        }
-      }
-    }
-  }
-`
+export default HomePage

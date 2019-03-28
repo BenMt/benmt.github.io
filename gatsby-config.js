@@ -1,30 +1,43 @@
-const siteMetadata = require('./src/data/siteMetadata')
+const dotenv = require('dotenv')
+
+if (process.env.ENVIRONMENT !== 'production') {
+  dotenv.config()
+}
 
 module.exports = {
-  siteMetadata,
   plugins: [
-    'gatsby-plugin-react-helmet',
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     {
-      resolve: 'gatsby-plugin-i18n',
+      resolve: `gatsby-source-contentful`,
       options: {
-        langKeyDefault: 'en',
-        useLangKeyLayout: false
+        spaceId: `${process.env.CONTENTFUL_SPACE_ID}`,
+        accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`
       }
     },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     path: `${__dirname}/path/to/markdown/files`,
-    //     name: "markdown-pages",
-    //   },
-    // },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        trackingId: 'UA-64656539-1',
-        anonymize: true
+        name: `images`,
+        path: `${__dirname}/src/assets/images`
+      }
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `benoitmaigret.com`,
+        short_name: `Benoit Maigret`,
+        start_url: `/`,
+        background_color: `#000`,
+        theme_color: `#f56d45`,
+        display: `minimal-ui`,
+        icon: `src/assets/images/bm-icon.png` // This path is relative to the root of the site.
       }
     }
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    // 'gatsby-plugin-offline',
   ]
 }
