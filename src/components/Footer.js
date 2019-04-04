@@ -1,89 +1,98 @@
 import React from 'react'
 import styled, { withTheme } from 'styled-components'
-// import { Link } from 'gatsby'
-import { Box, Flex, Text, Link as ExternalLink } from 'rebass'
+import { Link } from 'gatsby'
+import { Box, Flex, Text } from 'rebass'
 import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa'
 
-import Link from './Link'
 import Wrapper from './Wrapper'
 
-const StyledLink = styled.a`
-  font-size: 0.8rem;
+const CodeLink = styled.a`
   color: #fff;
   text-decoration: none;
-  padding: 0.2rem;
 `
 
-const Icon = styled.div`
+const SocialLink = styled(CodeLink)`
   display: flex;
-  font-size: 2rem;
-  @media (max-width: 50em) {
-    font-size: 2.2rem;
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem;
+  margin: 0 0.2rem;
+
+  &:hover {
+    color: ${props => props.theme.color.main};
   }
-  @media (max-width: 30em) {
-    font-size: 3rem;
+`
+
+const GatsbyLink = styled(Link)`
+  display: flex;
+  font-size: 0.9rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem;
+
+  &:hover {
+    color: ${props => props.theme.color.main};
   }
 `
 
 const Footer = ({ mainNavigation, theme }) => (
   <Box bg={theme.color.dark}>
     <Wrapper>
-      <Flex justifyContent="space-between" alignItems="center">
-        <Flex color="#fff" alignItems="center" justifyContent="flex-start">
+      <Flex justifyContent="space-between" alignItems="center" py="0.2rem">
+        <Flex
+          flex="1"
+          color="#fff"
+          alignItems="center"
+          justifyContent="flex-start"
+        >
           {mainNavigation.map(navElement => (
-            <Link key={navElement.id} to={navElement.url} role="link">
+            <GatsbyLink key={navElement.id} to={navElement.url} role="link">
               {navElement.title}
-            </Link>
+            </GatsbyLink>
           ))}
         </Flex>
         <Flex
+          flex="1"
           flexDirection="column"
           justifyContent="center"
           alignItems="center"
         >
-          <StyledLink
-            href="https://www.gatsbyjs.org"
-            target="_BLANK"
-            rel="noopener noreferrer"
-          >
-            Made with Gatsby
-          </StyledLink>
-
-          <StyledLink
-            href="https://www.gatsbyjs.org"
-            target="_BLANK"
-            rel="noopener noreferrer"
-          >
-            Source on Github
-          </StyledLink>
+          <Text color="#fff" fontSize="0.7rem">
+            <CodeLink
+              href="https://github.com/BenMt/benmt.github.io"
+              target="_BLANK"
+              rel="noopener noreferrer"
+            >
+              Source available on Github
+            </CodeLink>
+          </Text>
         </Flex>
-        <Flex alignItems="center">
-          <Icon>
-            <Link
-              isExternal
-              href="https://github.com/BenMt"
-              color="#fff"
-              target="_BLANK"
-            >
-              <FaGithub />
-            </Link>
-            <Link
-              isExternal
-              href="https://twitter.com/benoitmaigret"
-              color="#fff"
-              target="_BLANK"
-            >
-              <FaTwitter />
-            </Link>
-            <Link
-              isExternal
-              href="https://www.linkedin.com/in/benoitmaigret/"
-              color="#fff"
-              target="_BLANK"
-            >
-              <FaLinkedin />
-            </Link>
-          </Icon>
+        <Flex alignItems="center" flex="1" justifyContent="flex-end">
+          <SocialLink
+            href="https://github.com/BenMt"
+            target="_BLANK"
+            role="link"
+            aria-label="Github"
+          >
+            <FaGithub />
+          </SocialLink>
+          <SocialLink
+            href="https://twitter.com/benoitmaigret"
+            target="_BLANK"
+            role="link"
+            aria-label="Twitter"
+          >
+            <FaTwitter />
+          </SocialLink>
+          <SocialLink
+            href="https://www.linkedin.com/in/benoitmaigret/"
+            target="_BLANK"
+            role="link"
+            aria-label="LnkedIn"
+          >
+            <FaLinkedin />
+          </SocialLink>
         </Flex>
       </Flex>
     </Wrapper>

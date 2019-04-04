@@ -9,7 +9,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Open Sans', sans-serif;
     min-width: 100%;
     min-height: 100%;
     overflow-x: hidden;

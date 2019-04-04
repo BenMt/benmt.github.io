@@ -6,4 +6,6 @@ const Wrapper = styled.div`
   max-width: 960px;
 `
 
-export default ({ children }) => <Wrapper>{children}</Wrapper>
+export default ({ children, ...otherProps }) => (
+  <Wrapper {...otherProps}>{children}</Wrapper>
+)

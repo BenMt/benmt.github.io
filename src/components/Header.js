@@ -4,9 +4,6 @@ import { Link } from 'gatsby'
 import { Flex } from 'rebass'
 
 const Container = styled.header`
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
 `
 
@@ -14,14 +11,20 @@ const StyledLink = styled(Link)`
   color: #fff;
   text-decoration: none;
   padding: 1rem;
+
+  &:hover {
+    color: ${props => props.theme.color.main};
+  }
 `
 
-const Header = ({ siteTitle, mainNavigation }) => (
+const Header = ({ mainNavigation }) => (
   <Container>
-    <Flex m="1em" color="#fff" alignItems="flex-end" justifyContent="center">
-      {/* <h1 style={{ margin: 0 }}>
-        <Link to="/">{siteTitle}</Link>
-      </h1> */}
+    <Flex
+      role="navigation"
+      color="#fff"
+      alignItems="flex-end"
+      justifyContent="center"
+    >
       {mainNavigation.map(navElement => (
         <StyledLink key={navElement.id} to={navElement.url} role="link">
           {navElement.title}

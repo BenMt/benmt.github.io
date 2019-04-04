@@ -1,14 +1,11 @@
-// @flow
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import { Box } from 'rebass'
-import 'normalize.css'
 
 import GlobalStyle from '../utils/styles'
 import theme from '../utils/theme'
 import Header from './Header'
-import Background from './Background'
 import Footer from './Footer'
 
 const Layout = ({ children }) => (
@@ -37,22 +34,15 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
-        <ThemeProvider theme={theme}>
-          <>
-            <GlobalStyle />
-            <Background image={data.contentfulSettings.background.fluid} />
-            <Header
-              siteTitle={data.contentfulSettings.title}
-              mainNavigation={data.contentfulSettings.mainNavigation}
-            />
-            <Box bg="#fff" role="main">
-              {children}
-            </Box>
-            <Footer mainNavigation={data.contentfulSettings.mainNavigation} />
-          </>
-        </ThemeProvider>
-      </>
+      <ThemeProvider theme={theme}>
+        <>
+          <GlobalStyle />
+          <Header mainNavigation={data.contentfulSettings.mainNavigation} />
+
+          <Box role="main">{children}</Box>
+          <Footer mainNavigation={data.contentfulSettings.mainNavigation} />
+        </>
+      </ThemeProvider>
     )}
   />
 )
