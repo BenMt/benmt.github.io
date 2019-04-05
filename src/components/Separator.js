@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const SeparatorStyled = styled.div`
   width: ${props => props.width || 'auto'};
   height: 2px;
-  background: ${props => (props.dark ? '#000' : '#fff')};
+  background: ${props => props.color || '#fff'};
   position: relative;
   margin-top: 20px;
 `

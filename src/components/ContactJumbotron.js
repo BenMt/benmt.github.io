@@ -6,7 +6,7 @@ import Wrapper from './Wrapper'
 import Separator from './Separator'
 import Background from './Background'
 
-const ContactJumbotron = ({ siteTitle, background }) => (
+const ContactJumbotron = ({ background }) => (
   <>
     <Background image={background} size="400px" alignImg="bottom" />
     <Wrapper css={{ position: 'relative' }}>

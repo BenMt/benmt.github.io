@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
-import { Box, Heading, Text } from 'rebass'
+import { Box, Text } from 'rebass'
 
 import Layout from '../components/Layout'
 import SEO from '../components/Seo'
@@ -14,7 +14,7 @@ const Link = styled.a`
   text-decoration: none;
 `
 
-const ContactPage = () => (
+const ContactPage = ({ location }) => (
   <StaticQuery
     query={graphql`
       query ContactPage {
@@ -40,7 +40,7 @@ const ContactPage = () => (
       }
     `}
     render={data => (
-      <Layout withHeaderBackground>
+      <Layout withHeaderBackground currentPathname={location.pathname}>
         <SEO keywords={[]} />
 
         <ContactJumbotron
@@ -51,7 +51,9 @@ const ContactPage = () => (
           <Wrapper>
             <Box>
               <Spacer size="5em" />
-              <Heading>Benoit Maigret - Freelance Frontend Developer</Heading>
+              <Text as="h1" mb="0">
+                Benoit Maigret | Freelance Frontend Developer
+              </Text>
               <Text as="small">Based in Mulhouse (France)</Text>
               <Spacer />
               <Text>

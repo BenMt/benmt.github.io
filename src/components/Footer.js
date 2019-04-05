@@ -39,7 +39,12 @@ const GatsbyLink = styled(Link)`
 const Footer = ({ mainNavigation, theme }) => (
   <Box bg={theme.color.dark}>
     <Wrapper>
-      <Flex justifyContent="space-between" alignItems="center" py="0.2rem">
+      <Flex
+        flexDirection={['column', 'row']}
+        justifyContent="space-between"
+        alignItems="center"
+        py="0.2rem"
+      >
         <Flex
           flex="1"
           color="#fff"
@@ -54,9 +59,9 @@ const Footer = ({ mainNavigation, theme }) => (
         </Flex>
         <Flex
           flex="1"
-          flexDirection="column"
           justifyContent="center"
           alignItems="center"
+          m={['1rem 0', '0']}
         >
           <Text color="#fff" fontSize="0.7rem">
             <CodeLink

@@ -9,7 +9,7 @@ const Container = styled.header`
 
 const StyledLink = styled(Link)`
   color: #fff;
-  text-decoration: none;
+  text-decoration: ${props => (props.isCurrent ? 'underline' : 'none')};
   padding: 1rem;
 
   &:hover {
@@ -17,7 +17,7 @@ const StyledLink = styled(Link)`
   }
 `
 
-const Header = ({ mainNavigation }) => (
+const Header = ({ mainNavigation, currentPathname }) => (
   <Container>
     <Flex
       role="navigation"
@@ -26,7 +26,12 @@ const Header = ({ mainNavigation }) => (
       justifyContent="center"
     >
       {mainNavigation.map(navElement => (
-        <StyledLink key={navElement.id} to={navElement.url} role="link">
+        <StyledLink
+          key={navElement.id}
+          to={navElement.url}
+          isCurrent={currentPathname === navElement.url}
+          role="link"
+        >
           {navElement.title}
         </StyledLink>
       ))}

@@ -8,7 +8,7 @@ import theme from '../utils/theme'
 import Header from './Header'
 import Footer from './Footer'
 
-const Layout = ({ children }) => (
+const Layout = ({ children, currentPathname }) => (
   <StaticQuery
     query={graphql`
       query Layout {
@@ -37,7 +37,10 @@ const Layout = ({ children }) => (
       <ThemeProvider theme={theme}>
         <>
           <GlobalStyle />
-          <Header mainNavigation={data.contentfulSettings.mainNavigation} />
+          <Header
+            mainNavigation={data.contentfulSettings.mainNavigation}
+            currentPathname={currentPathname}
+          />
 
           <Box role="main">{children}</Box>
           <Footer mainNavigation={data.contentfulSettings.mainNavigation} />
