@@ -41,6 +41,13 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/typography`
       }
+    },
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyDefault: 'fr',
+        useLangKeyLayout: false
+      }
     }
   ]
 }

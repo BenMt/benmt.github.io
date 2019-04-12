@@ -17,7 +17,7 @@ const StyledLink = styled(Link)`
   }
 `
 
-const Header = ({ mainNavigation, currentPathname }) => (
+const Header = ({ currentPathname, mainNavigation }) => (
   <Container>
     <Flex
       role="navigation"

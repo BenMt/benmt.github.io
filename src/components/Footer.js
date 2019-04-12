@@ -36,7 +36,7 @@ const GatsbyLink = styled(Link)`
   }
 `
 
-const Footer = ({ mainNavigation, theme }) => (
+const Footer = ({ theme, mainNavigation }) => (
   <Box bg={theme.color.dark}>
     <Wrapper>
       <Flex

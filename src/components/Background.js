@@ -1,4 +1,5 @@
 import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 
@@ -23,10 +24,34 @@ const Mask = styled.div`
   opacity: ${props => (props.opacity ? props.opacity : '0.92')};
 `
 
-const Background = ({ image, alignImg, ...otherProps }) => (
-  <Wrapper {...otherProps}>
-    <Img fluid={image} imgStyle={{ objectPosition: alignImg || 'center' }} />
-    <Mask />
-  </Wrapper>
+const Background = ({ alignImg, ...otherProps }) => (
+  <StaticQuery
+    query={graphql`
+      query Background {
+        contentfulSettings {
+          background {
+            fluid(quality: 90) {
+              base64
+              aspectRatio
+              src
+              srcSet
+              srcWebp
+              srcSetWebp
+              sizes
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <Wrapper {...otherProps}>
+        <Img
+          fluid={data.contentfulSettings.background.fluid}
+          imgStyle={{ objectPosition: alignImg || 'center' }}
+        />
+        <Mask />
+      </Wrapper>
+    )}
+  />
 )
 export default Background

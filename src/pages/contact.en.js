@@ -8,8 +8,8 @@ import ContactContent from '../components/ContactContent'
 const ContactPage = props => (
   <StaticQuery
     query={graphql`
-      query ContactPage {
-        allContentfulSettings(filter: { node_locale: { eq: "fr" } }) {
+      query ContactEnPage {
+        allContentfulSettings(filter: { node_locale: { eq: "en" } }) {
           edges {
             node {
               title
@@ -21,7 +21,7 @@ const ContactPage = props => (
             }
           }
         }
-        allContentfulContactPage(filter: { node_locale: { eq: "fr" } }) {
+        allContentfulContactPage(filter: { node_locale: { eq: "en" } }) {
           edges {
             node {
               title

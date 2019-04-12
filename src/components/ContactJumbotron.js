@@ -6,13 +6,13 @@ import Wrapper from './Wrapper'
 import Separator from './Separator'
 import Background from './Background'
 
-const ContactJumbotron = ({ background }) => (
+const ContactJumbotron = ({ title }) => (
   <>
-    <Background image={background} size="400px" alignImg="bottom" />
+    <Background size="400px" alignImg="bottom" />
     <Wrapper css={{ position: 'relative' }}>
       <Spacer size="5rem" />
       <Text as="h1" color="#fff">
-        Get in touch
+        {title}
       </Text>
       <Box width="260px">
         <Separator />
