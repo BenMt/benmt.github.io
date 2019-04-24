@@ -1,5 +1,6 @@
 import React from 'react'
 import { Box, Text } from 'rebass'
+import Markdown from 'react-markdown'
 import styled from 'styled-components'
 
 import Spacer from './Spacer'
@@ -60,18 +61,14 @@ const ContactContent = ({ data }) => (
           </Text>
           <Text as="small">{data.location}</Text>
           <Spacer />
-          <Text>
-            {data.content
-              .split(/\{\{|\}\}/g)
-              .map(
-                part =>
-                  (part === 'twitter' && <Twitter />) ||
-                  (part === 'github' && <Github />) ||
-                  (part === 'linkedin' && <LinkedIn />) ||
-                  (part === 'email' && <em>hello[at]benoitmaigret.com</em>) ||
-                  part
-              )}
-          </Text>
+          <Markdown
+            source={data.content && data.content.content}
+            renderers={{
+              link: props => (
+                <a {...props} target="_blank" rel="noopener noreferrer" />
+              )
+            }}
+          />
           <Spacer size="5rem" />
         </Box>
       </Wrapper>

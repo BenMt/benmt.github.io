@@ -7,17 +7,14 @@ import theme from '../utils/theme'
 import Header from './Header'
 import Footer from './Footer'
 
-const Layout = ({ children, currentPathname, mainNavigation }) => (
+const Layout = ({ children, currentPathname, pageContext }) => (
   <ThemeProvider theme={theme}>
     <>
       <GlobalStyle />
-      <Header
-        mainNavigation={mainNavigation}
-        currentPathname={currentPathname}
-      />
+      <Header currentPathname={currentPathname} langKey={pageContext.langKey} />
 
       <Box role="main">{children}</Box>
-      <Footer mainNavigation={mainNavigation} />
+      <Footer langKey={pageContext.langKey} />
     </>
   </ThemeProvider>
 )

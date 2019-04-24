@@ -34,6 +34,7 @@ const GatsbyLink = styled(Link)`
 
   &:hover {
     color: ${props => props.theme.color.main};
+    text-decoration: none;
   }
 `
 

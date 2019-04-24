@@ -11,13 +11,26 @@ const Container = styled.header`
 const StyledLink = styled.div`
   & > a {
     display: block;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     color: #fff;
     text-decoration: ${props => (props.isCurrent ? 'underline' : 'none')};
+
+    @media screen and (min-width: 40em) {
+      padding: 1rem;
+    }
 
     &:hover {
       color: ${props => props.theme.color.main};
     }
+  }
+`
+
+const LangContainer = styled.div`
+  position: relative;
+  @media screen and (min-width: 40em) {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 `
 
@@ -60,28 +73,31 @@ const Header = ({ currentPathname, langKey }) => (
         <Flex
           role="navigation"
           color="#fff"
-          alignItems="flex-end"
+          alignItems={['center', 'flex-end']}
           justifyContent="center"
+          flexDirection={['column-reverse', 'row']}
         >
-          {data[langKey].edges[0].node.mainNavigation.map(navElement => (
-            <StyledLink
-              key={navElement.id}
-              isCurrent={currentPathname === navElement.url}
-            >
-              <Link to={navElement.url} role="link">
-                {navElement.title}
-              </Link>
-            </StyledLink>
-          ))}
-          <Flex css={{ position: 'absolute', top: 0, right: 0 }}>
+          <Flex>
+            {data[langKey].edges[0].node.mainNavigation.map(navElement => (
+              <StyledLink
+                key={navElement.id}
+                isCurrent={currentPathname === navElement.url}
+              >
+                <Link to={navElement.url} role="link">
+                  {navElement.title}
+                </Link>
+              </StyledLink>
+            ))}
+          </Flex>
+          <LangContainer>
             <StyledLink>
               <Link
                 to={
                   (currentPathname === '/parcours' ? '/en/resume' : '') ||
                   (currentPathname === '/en/resume' && '/parcours') ||
                   (langKey === 'fr'
-                    ? `en/${currentPathname}`
-                    : currentPathname.replace('en/', '/'))
+                    ? `en${currentPathname}`
+                    : currentPathname.replace('en', ''))
                 }
                 role="link"
               >
@@ -90,7 +106,7 @@ const Header = ({ currentPathname, langKey }) => (
                 </Text>
               </Link>
             </StyledLink>
-          </Flex>
+          </LangContainer>
         </Flex>
       </Container>
     )}
