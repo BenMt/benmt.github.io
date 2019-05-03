@@ -6,53 +6,19 @@ import styled from 'styled-components'
 import Spacer from './Spacer'
 import Wrapper from './Wrapper'
 import ContactJumbotron from './ContactJumbotron'
-import { socialNetworksUrls } from '../utils/constants'
 
-const Link = styled.a`
-  color: ${props => props.theme.color.main};
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
+const Content = styled.div`
+  background-color: #fff;
+
+  @media screen and (min-width: 40em) {
+    min-height: calc(90vh - 330px);
   }
 `
-
-const Twitter = () => (
-  <Link
-    href={socialNetworksUrls.twitter}
-    role="link"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Twitter
-  </Link>
-)
-
-const Github = () => (
-  <Link
-    href={socialNetworksUrls.github}
-    role="link"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Github
-  </Link>
-)
-
-const LinkedIn = () => (
-  <Link
-    href={socialNetworksUrls.linkedin}
-    role="link"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    LinkedIn
-  </Link>
-)
 
 const ContactContent = ({ data }) => (
   <>
     <ContactJumbotron title={data.title} />
-    <Box bg="#fff">
+    <Content>
       <Wrapper>
         <Box>
           <Spacer size="5em" />
@@ -72,7 +38,7 @@ const ContactContent = ({ data }) => (
           <Spacer size="5rem" />
         </Box>
       </Wrapper>
-    </Box>
+    </Content>
   </>
 )
 

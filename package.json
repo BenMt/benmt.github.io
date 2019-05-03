@@ -5,6 +5,7 @@
   "version": "4.0.0",
   "author": "Benoit Maigret <contact@benoitmaigret.com>",
   "dependencies": {
+    "@svgr/webpack": "^4.2.0",
     "gatsby": "^2.1.24",
     "gatsby-image": "^2.0.31",
     "gatsby-plugin-i18n": "^1.0.1",
@@ -13,6 +14,7 @@
     "gatsby-plugin-react-helmet": "^3.0.8",
     "gatsby-plugin-sharp": "^2.0.25",
     "gatsby-plugin-styled-components": "^3.0.6",
+    "gatsby-plugin-svgr": "^2.0.2",
     "gatsby-plugin-typography": "^2.2.10",
     "gatsby-source-contentful": "^2.0.35",
     "gatsby-source-filesystem": "^2.0.23",

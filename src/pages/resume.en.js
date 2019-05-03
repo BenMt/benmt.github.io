@@ -26,10 +26,28 @@ const ResumeEnPage = props => (
             }
           }
         }
+        allContentfulResumePage(filter: { node_locale: { eq: "en" } }) {
+          edges {
+            node {
+              title
+              subtitle
+              technicalTitle
+              workTitle
+              sideProjectTitle
+              sideProjectContent {
+                sideProjectContent
+              }
+            }
+          }
+        }
       }
     `}
     render={data => (
-      <ResumePage data={data.allContentfulWork.edges} {...props} />
+      <ResumePage
+        data={data.allContentfulResumePage.edges[0].node}
+        works={data.allContentfulWork.edges}
+        {...props}
+      />
     )}
   />
 )

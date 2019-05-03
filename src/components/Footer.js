@@ -94,7 +94,7 @@ const Footer = ({ theme, langKey }) => (
               ))}
             </Flex>
             <Flex
-              flex="1"
+              flex="auto"
               flexDirection="column"
               justifyContent="center"
               alignItems="center"
