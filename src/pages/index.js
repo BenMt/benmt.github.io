@@ -10,9 +10,11 @@ export const HomePage = ({ location, pageContext, data }) => (
     withHeaderBackground
     currentPathname={location.pathname}
     pageContext={pageContext}
+    title={data.title}
+    subtitle={data.subtitle}
   >
     <SEO keywords={[]} />
-
+    {console.log(data)}
     <HomeContent data={data} />
   </Layout>
 )

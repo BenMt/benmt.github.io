@@ -5,7 +5,6 @@ import { Box, Flex, Text } from 'rebass'
 
 import Spacer from './Spacer'
 import Wrapper from './Wrapper'
-import ResumeJumbotron from './ResumeJumbotron'
 import Separator from './Separator'
 import Work from './Work'
 
@@ -61,7 +60,6 @@ const icons = [
 
 const ResumeContent = ({ works, data }) => (
   <>
-    <ResumeJumbotron title={data.title} subtitle={data.subtitle} />
     <Box bg="#fff">
       <Wrapper>
         <Box>

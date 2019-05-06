@@ -10,6 +10,8 @@ export const ResumePage = ({ location, pageContext, data, works }) => (
     withHeaderBackground
     currentPathname={location.pathname}
     pageContext={pageContext}
+    title={data.title}
+    subtitle={data.subtitle}
   >
     <SEO keywords={[]} />
     <ResumeContent works={works} data={data} />

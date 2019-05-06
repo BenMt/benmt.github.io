@@ -5,7 +5,6 @@ import Img from 'gatsby-image'
 
 import Spacer from './Spacer'
 import Wrapper from './Wrapper'
-import HomeJumbotron from './HomeJumbotron'
 
 import { ReactComponent as Hozana } from '../assets/icons/logo-hozana.svg'
 
@@ -38,8 +37,6 @@ const HomeContent = ({ data }) => (
     `}
     render={files => (
       <>
-        {console.log(data)}
-        <HomeJumbotron title={data.title} siteTitle={data.subtitle} />
         <Box bg="#fff">
           <Wrapper>
             <Spacer size="5em" />

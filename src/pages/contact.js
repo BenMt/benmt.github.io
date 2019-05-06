@@ -10,6 +10,8 @@ export const ContactPage = ({ location, pageContext, data }) => (
     withHeaderBackground
     currentPathname={location.pathname}
     pageContext={pageContext}
+    title={data.title}
+    alignImg="bottom"
   >
     <SEO keywords={[]} />
     <ContactContent data={data} />

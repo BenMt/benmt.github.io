@@ -30,7 +30,7 @@ const Background = ({ alignImg, ...otherProps }) => (
       query Background {
         contentfulSettings {
           background {
-            fluid(quality: 90) {
+            fluid(quality: 100) {
               base64
               aspectRatio
               src
