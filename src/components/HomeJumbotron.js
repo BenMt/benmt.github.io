@@ -6,13 +6,13 @@ import Wrapper from './Wrapper'
 import Separator from './Separator'
 import Background from './Background'
 
-const HomeJumbotron = ({ siteTitle }) => (
+const HomeJumbotron = ({ title, siteTitle }) => (
   <>
     <Background />
     <Wrapper css={{ position: 'relative' }}>
       <Spacer size="5rem" />
       <Text as="h1" color="#fff">
-        Développeur front-end freelance
+        {title}
       </Text>
       <Box width="260px">
         <Separator />

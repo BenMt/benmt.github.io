@@ -1,10 +1,11 @@
 import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import SEO from '../components/Seo'
 import HomeContent from '../components/HomeContent'
 
-const HomePage = ({ location, pageContext }) => (
+export const HomePage = ({ location, pageContext, data }) => (
   <Layout
     withHeaderBackground
     currentPathname={location.pathname}
@@ -12,8 +13,32 @@ const HomePage = ({ location, pageContext }) => (
   >
     <SEO keywords={[]} />
 
-    <HomeContent />
+    <HomeContent data={data} />
   </Layout>
 )
 
-export default HomePage
+const HomeFrPage = props => (
+  <StaticQuery
+    query={graphql`
+      query HomeFrPage {
+        allContentfulHomePage(filter: { node_locale: { eq: "fr" } }) {
+          edges {
+            node {
+              title
+              subtitle
+              aboutContent {
+                aboutContent
+              }
+              clientsTitle
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <HomePage data={data.allContentfulHomePage.edges[0].node} {...props} />
+    )}
+  />
+)
+
+export default HomeFrPage
