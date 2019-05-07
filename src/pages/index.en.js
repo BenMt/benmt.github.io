@@ -17,6 +17,10 @@ const HomeEnPage = props => (
                 aboutContent
               }
               clientsTitle
+              contactText
+              contactUrl
+              resumeText
+              resumeUrl
             }
           }
         }
