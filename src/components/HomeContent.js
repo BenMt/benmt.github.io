@@ -54,7 +54,10 @@ const HomeContent = ({ data }) => (
             <Markdown
               source={data.aboutContent && data.aboutContent.aboutContent}
               renderers={{
-                strong: props => <strong>{props.children}</strong>
+                strong: props => <strong>{props.children}</strong>,
+                link: props => (
+                  <a {...props} target="_blank" rel="noopener noreferrer" />
+                )
               }}
             />
 
