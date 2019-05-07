@@ -10,7 +10,7 @@ const Jumbotron = ({ title, subtitle, alignImg }) => (
   <>
     <Background size="400px" alignImg={alignImg} />
     <Wrapper css={{ position: 'relative' }}>
-      <Spacer size="5rem" />
+      <Box pt={['3rem', '5rem']} />
       <Text as="h1" color="#fff">
         {title}
       </Text>
@@ -21,7 +21,7 @@ const Jumbotron = ({ title, subtitle, alignImg }) => (
       <Text as="h2" color="#fff">
         {subtitle}
       </Text>
-      <Spacer size="5rem" />
+      <Box pt={['3rem', '5rem']} />
     </Wrapper>
   </>
 )

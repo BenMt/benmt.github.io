@@ -48,6 +48,7 @@ const Background = ({ alignImg, ...otherProps }) => (
         <Img
           fluid={data.contentfulSettings.background.fluid}
           imgStyle={{ objectPosition: alignImg || 'center' }}
+          style={{ minHeight: '400px' }}
         />
         <Mask />
       </Wrapper>
