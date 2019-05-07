@@ -10,6 +10,7 @@ const HomeEnPage = props => (
         allContentfulHomePage(filter: { node_locale: { eq: "en" } }) {
           edges {
             node {
+              metaTitle
               title
               subtitle
               aboutContent {
@@ -22,7 +23,11 @@ const HomeEnPage = props => (
       }
     `}
     render={data => (
-      <HomePage data={data.allContentfulHomePage.edges[0].node} {...props} />
+      <HomePage
+        data={data.allContentfulHomePage.edges[0].node}
+        lang="en"
+        {...props}
+      />
     )}
   />
 )

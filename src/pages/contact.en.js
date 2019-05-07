@@ -10,6 +10,7 @@ const ContactEnPage = props => (
         allContentfulContactPage(filter: { node_locale: { eq: "en" } }) {
           edges {
             node {
+              metaTitle
               title
               subtitle
               content {
@@ -24,6 +25,7 @@ const ContactEnPage = props => (
     render={data => (
       <ContactPage
         data={data.allContentfulContactPage.edges[0].node}
+        lang="en"
         {...props}
       />
     )}

@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/Seo'
 import ContactContent from '../components/ContactContent'
 
-export const ContactPage = ({ location, pageContext, data }) => (
+export const ContactPage = ({ location, pageContext, lang, data }) => (
   <Layout
     withHeaderBackground
     currentPathname={location.pathname}
@@ -13,7 +13,7 @@ export const ContactPage = ({ location, pageContext, data }) => (
     title={data.title}
     alignImg="bottom"
   >
-    <SEO keywords={[]} />
+    <SEO title={data.metaTitle} lang={lang} />
     <ContactContent data={data} />
   </Layout>
 )
@@ -25,6 +25,7 @@ const ContactFrPage = props => (
         allContentfulContactPage(filter: { node_locale: { eq: "fr" } }) {
           edges {
             node {
+              metaTitle
               title
               subtitle
               content {
@@ -39,6 +40,7 @@ const ContactFrPage = props => (
     render={data => (
       <ContactPage
         data={data.allContentfulContactPage.edges[0].node}
+        lang="fr"
         {...props}
       />
     )}

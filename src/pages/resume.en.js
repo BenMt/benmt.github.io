@@ -29,6 +29,7 @@ const ResumeEnPage = props => (
         allContentfulResumePage(filter: { node_locale: { eq: "en" } }) {
           edges {
             node {
+              metaTitle
               title
               subtitle
               technicalTitle
@@ -46,6 +47,7 @@ const ResumeEnPage = props => (
       <ResumePage
         data={data.allContentfulResumePage.edges[0].node}
         works={data.allContentfulWork.edges}
+        lang="en"
         {...props}
       />
     )}

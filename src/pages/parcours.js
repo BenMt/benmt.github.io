@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/Seo'
 import ResumeContent from '../components/ResumeContent'
 
-export const ResumePage = ({ location, pageContext, data, works }) => (
+export const ResumePage = ({ location, pageContext, lang, data, works }) => (
   <Layout
     withHeaderBackground
     currentPathname={location.pathname}
@@ -13,7 +13,7 @@ export const ResumePage = ({ location, pageContext, data, works }) => (
     title={data.title}
     subtitle={data.subtitle}
   >
-    <SEO keywords={[]} />
+    <SEO title={data.metaTitle} lang={lang} />
     <ResumeContent works={works} data={data} />
   </Layout>
 )
@@ -44,6 +44,7 @@ const ResumeFrPage = props => (
         allContentfulResumePage(filter: { node_locale: { eq: "fr" } }) {
           edges {
             node {
+              metaTitle
               title
               subtitle
               technicalTitle
@@ -61,6 +62,7 @@ const ResumeFrPage = props => (
       <ResumePage
         data={data.allContentfulResumePage.edges[0].node}
         works={data.allContentfulWork.edges}
+        lang="fr"
         {...props}
       />
     )}

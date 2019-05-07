@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/Seo'
 import HomeContent from '../components/HomeContent'
 
-export const HomePage = ({ location, pageContext, data }) => (
+export const HomePage = ({ location, pageContext, lang, data }) => (
   <Layout
     withHeaderBackground
     currentPathname={location.pathname}
@@ -13,8 +13,8 @@ export const HomePage = ({ location, pageContext, data }) => (
     title={data.title}
     subtitle={data.subtitle}
   >
-    <SEO keywords={[]} />
-    {console.log(data)}
+    <SEO title={data.metaTitle} lang={lang} />
+
     <HomeContent data={data} />
   </Layout>
 )
@@ -26,6 +26,7 @@ const HomeFrPage = props => (
         allContentfulHomePage(filter: { node_locale: { eq: "fr" } }) {
           edges {
             node {
+              metaTitle
               title
               subtitle
               aboutContent {
@@ -38,7 +39,11 @@ const HomeFrPage = props => (
       }
     `}
     render={data => (
-      <HomePage data={data.allContentfulHomePage.edges[0].node} {...props} />
+      <HomePage
+        data={data.allContentfulHomePage.edges[0].node}
+        lang="fr"
+        {...props}
+      />
     )}
   />
 )
