@@ -1,23 +1,41 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import { Box } from 'rebass'
+import { Box, Text } from 'rebass'
 
 import Layout from '../components/Layout'
 import Wrapper from '../components/Wrapper'
 import SEO from '../components/Seo'
 
-const NotFoundPage = ({ pageContext }) => (
+export const NotFoundPage = ({ location, pageContext, lang, data }) => (
+  <Layout
+    withHeaderBackground
+    currentPathname={location.pathname}
+    pageContext={pageContext}
+    title="404"
+  >
+    <SEO title={data.title} lang={lang} />
+    <Wrapper>
+      <Box pt="5rem" />
+      <Text>{data.text && data.text}</Text>
+
+      <Box pt="5rem" />
+
+      <Box pt="5rem" />
+    </Wrapper>
+  </Layout>
+)
+
+const NotFoundFrPage = props => (
   <StaticQuery
     query={graphql`
-      query NotFoundPage {
-        allContentfulSettings(filter: { node_locale: { eq: "fr" } }) {
+      query NotFoundFrPage {
+        allContentful404Page(filter: { node_locale: { eq: "fr" } }) {
           edges {
             node {
               title
-              mainNavigation {
-                id
-                title
-                url
+
+              text {
+                text
               }
             }
           }
@@ -25,22 +43,13 @@ const NotFoundPage = ({ pageContext }) => (
       }
     `}
     render={data => (
-      <Layout
-        withHeaderBackground
-        mainNavigation={data.allContentfulSettings.edges[0].node.mainNavigation}
-        pageContext={pageContext}
-      >
-        <SEO title="404: Not found" />
-        <Wrapper>
-          <Box pt="5rem" />
-          <h1>NOT FOUND</h1>
-          <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-
-          <Box pt="5rem" />
-        </Wrapper>
-      </Layout>
+      <NotFoundPage
+        data={data.allContentful404Page.edges[0].node}
+        lang="fr"
+        {...props}
+      />
     )}
   />
 )
 
-export default NotFoundPage
+export default NotFoundFrPage
