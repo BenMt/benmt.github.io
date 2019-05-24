@@ -16,7 +16,7 @@ export const NotFoundPage = ({ location, pageContext, lang, data }) => (
     <SEO title={data.title} lang={lang} />
     <Wrapper>
       <Box pt="5rem" />
-      <Text>{data.text && data.text}</Text>
+      <Text>{data.text && data.text.text}</Text>
 
       <Box pt="5rem" />
 
