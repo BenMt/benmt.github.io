@@ -8,16 +8,6 @@ const typography = new Typography({
   headerFontFamily: ['Raleway', 'Helvetica Neue', 'Arial', 'sans-serif'],
   headerWeight: 400,
   bodyFontFamily: ['Open Sans', 'sans-serif'],
-  googleFonts: [
-    {
-      name: 'Raleway',
-      styles: ['400']
-    },
-    {
-      name: 'Open Sans',
-      styles: ['400', '400i', '700', '700i']
-    }
-  ],
   overrideStyles: () => ({
     a: {
       textDecoration: 'none',

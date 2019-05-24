@@ -6,6 +6,7 @@ if (process.env.ENVIRONMENT !== 'production') {
 
 module.exports = {
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
@@ -41,6 +42,14 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Raleway:400', 'Open Sans:400,400i,700,700i']
+        }
       }
     },
     {
