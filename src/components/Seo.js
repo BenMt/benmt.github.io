@@ -7,12 +7,6 @@ const Seo = ({ lang, title }) => (
       lang
     }}
     title={title}
-    meta={[
-      {
-        name: `description`,
-        content: `%s`
-      }
-    ]}
   />
 )
 
